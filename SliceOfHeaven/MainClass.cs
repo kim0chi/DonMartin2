@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections;
 
 namespace SliceOfHeaven
 {
@@ -106,6 +107,32 @@ namespace SliceOfHeaven
             }
 
             return isValid;
+        }
+
+        public static int SQL(string qry, Hashtable ht)
+        {
+            int res = 0;
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand(qry, con);
+                cmd.CommandType = CommandType.Text;
+
+                foreach (DictionaryEntry item in ht)
+                {
+                    cmd.Parameters.AddWithValue(item.Key.ToString(), item.Value);    
+                }
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            return res;
         }
     }
 }

@@ -82,6 +82,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 83);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btn_close
             // 
@@ -93,7 +94,7 @@
             this.btn_close.ColorBackground = System.Drawing.Color.Linen;
             this.btn_close.ColorBackground_1 = System.Drawing.Color.RosyBrown;
             this.btn_close.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_close.ColorBackground_Pen = System.Drawing.Color.Maroon;
+            this.btn_close.ColorBackground_Pen = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_close.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
             this.btn_close.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
             this.btn_close.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
@@ -133,7 +134,7 @@
             this.btn_save.ColorBackground = System.Drawing.Color.Linen;
             this.btn_save.ColorBackground_1 = System.Drawing.Color.RosyBrown;
             this.btn_save.ColorBackground_2 = System.Drawing.Color.Linen;
-            this.btn_save.ColorBackground_Pen = System.Drawing.Color.Maroon;
+            this.btn_save.ColorBackground_Pen = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_save.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
             this.btn_save.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
             this.btn_save.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
@@ -187,8 +188,8 @@
         public ReaLTaiizor.Controls.CyberButton btn_close;
         public ReaLTaiizor.Controls.CyberButton btn_save;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Label lbl_header;
         public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Panel panel2;
     }
 }
