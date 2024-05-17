@@ -123,6 +123,7 @@
             this.btn_close.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.btn_close.Timer_Effect_1 = 5;
             this.btn_close.Timer_RGB = 300;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click_1);
             // 
             // btn_save
             // 

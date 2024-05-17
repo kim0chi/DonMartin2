@@ -28,101 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_CategoryView));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dgvSno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvName = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvedit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvdel = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_image)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label2
+            // btn_save
             // 
-            this.label2.Size = new System.Drawing.Size(139, 25);
-            this.label2.Text = "Category View";
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click_2);
             // 
-            // dataGridView1
+            // pbox_image
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvSno,
-            this.dgvName,
-            this.dgvid,
-            this.dgvedit,
-            this.dgvdel});
-            this.dataGridView1.Location = new System.Drawing.Point(37, 196);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(854, 380);
-            this.dataGridView1.TabIndex = 29;
-            // 
-            // dgvSno
-            // 
-            this.dgvSno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvSno.FillWeight = 70F;
-            this.dgvSno.HeaderText = "Sr#";
-            this.dgvSno.MinimumWidth = 70;
-            this.dgvSno.Name = "dgvSno";
-            this.dgvSno.ReadOnly = true;
-            this.dgvSno.Width = 70;
-            // 
-            // dgvName
-            // 
-            this.dgvName.HeaderText = "Name";
-            this.dgvName.Name = "dgvName";
-            this.dgvName.ReadOnly = true;
-            // 
-            // dgvid
-            // 
-            this.dgvid.HeaderText = "id";
-            this.dgvid.Name = "dgvid";
-            this.dgvid.ReadOnly = true;
-            this.dgvid.Visible = false;
-            // 
-            // dgvedit
-            // 
-            this.dgvedit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvedit.FillWeight = 50F;
-            this.dgvedit.HeaderText = "";
-            this.dgvedit.Image = ((System.Drawing.Image)(resources.GetObject("dgvedit.Image")));
-            this.dgvedit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dgvedit.MinimumWidth = 50;
-            this.dgvedit.Name = "dgvedit";
-            this.dgvedit.ReadOnly = true;
-            this.dgvedit.Width = 50;
-            // 
-            // dgvdel
-            // 
-            this.dgvdel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvdel.FillWeight = 50F;
-            this.dgvdel.HeaderText = "";
-            this.dgvdel.Image = ((System.Drawing.Image)(resources.GetObject("dgvdel.Image")));
-            this.dgvdel.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dgvdel.MinimumWidth = 50;
-            this.dgvdel.Name = "dgvdel";
-            this.dgvdel.ReadOnly = true;
-            this.dgvdel.Width = 50;
+            this.pbox_image.Location = new System.Drawing.Point(66, 54);
+            this.pbox_image.Click += new System.EventHandler(this.pbox_image_Click_1);
             // 
             // form_CategoryView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 588);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "form_CategoryView";
-            this.Text = "form_CategoryView";
-            this.Controls.SetChildIndex(this.txtbox_search, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.pbox_image, 0);
-            this.Controls.SetChildIndex(this.btn_save, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.dataGridView1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbox_image)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

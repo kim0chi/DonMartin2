@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections;
+using System.Dynamic;
+using System.Windows.Forms;
 
 namespace SliceOfHeaven
 {
@@ -56,8 +58,6 @@ namespace SliceOfHeaven
             get { return staff;  }
             private set { staff = value; }
         }
-
-
 
         public static void Register(string username, string name, string password, string phone, string email)
         {
@@ -109,6 +109,7 @@ namespace SliceOfHeaven
             return isValid;
         }
 
+        // Method for CURD Operation
         public static int SQL(string qry, Hashtable ht)
         {
             int res = 0;
@@ -125,14 +126,46 @@ namespace SliceOfHeaven
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
-
                 }
+                if(con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                res = cmd.ExecuteNonQuery();
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                MessageBox.Show(ex.ToString());
+                con.Close();
             }
             return res;
         }
+
+        // For Loading Data from database
+        public static void LoadData(string qry, DataGridView gv, ListBox lb)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand(qry, con);
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                for (int i = 0; i < lb.Items.Count; i++)
+                {
+                    string coldNam1 = ((DataGridViewColumn)lb.Items[i]).Name;
+                    gv.Columns[coldNam1].DataPropertyName = dt.Columns[i].ToString();   
+                }
+
+                gv.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                con.Close();
+            }
+        }
     }
+
 }

@@ -34,6 +34,14 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
+            // btn_close
+            // 
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click_1);
+            // 
+            // btn_save
+            // 
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click_1);
+            // 
             // lbl_header
             // 
             this.lbl_header.Size = new System.Drawing.Size(136, 25);

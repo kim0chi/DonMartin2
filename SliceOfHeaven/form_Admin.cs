@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SliceOfHeaven.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace SliceOfHeaven
 {
     public partial class form_Admin : Form
     {
+
+        form_CategoryView categoryView;
         public form_Admin()
         {
             InitializeComponent();
@@ -39,6 +42,11 @@ namespace SliceOfHeaven
         private void lbl_User_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_home_Click_1(object sender, EventArgs e)
+        {
+            AddControls(new form_CategoryView());
         }
     }
 }

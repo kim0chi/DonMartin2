@@ -213,6 +213,7 @@
             this.btn_home.Text = "          Categories";
             this.btn_home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_home.UseVisualStyleBackColor = true;
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click_1);
             // 
             // panel3
             // 
