@@ -16,25 +16,5 @@ namespace SliceOfHeaven
         {
             InitializeComponent();
         }
-
-        public virtual void btn_close_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        public virtual void btn_save_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btn_close_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

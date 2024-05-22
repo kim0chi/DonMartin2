@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_Admin));
-            this.metroControlBox1 = new ReaLTaiizor.Controls.MetroControlBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_User = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Logout = new ReaLTaiizor.Controls.CyberButton();
             this.btn_account = new System.Windows.Forms.Button();
             this.btn_share = new System.Windows.Forms.Button();
             this.btn_customize = new System.Windows.Forms.Button();
@@ -42,46 +42,19 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_Center = new System.Windows.Forms.Panel();
+            this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // metroControlBox1
-            // 
-            this.metroControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroControlBox1.CloseHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.metroControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
-            this.metroControlBox1.CloseNormalForeColor = System.Drawing.Color.Gray;
-            this.metroControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroControlBox1.DefaultLocation = ReaLTaiizor.Enum.Metro.LocationType.Normal;
-            this.metroControlBox1.DisabledForeColor = System.Drawing.Color.DimGray;
-            this.metroControlBox1.IsDerivedStyle = true;
-            this.metroControlBox1.Location = new System.Drawing.Point(673, 0);
-            this.metroControlBox1.MaximizeBox = true;
-            this.metroControlBox1.MaximizeHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.metroControlBox1.MaximizeHoverForeColor = System.Drawing.Color.Gray;
-            this.metroControlBox1.MaximizeNormalForeColor = System.Drawing.Color.Gray;
-            this.metroControlBox1.MinimizeBox = true;
-            this.metroControlBox1.MinimizeHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.metroControlBox1.MinimizeHoverForeColor = System.Drawing.Color.Gray;
-            this.metroControlBox1.MinimizeNormalForeColor = System.Drawing.Color.Gray;
-            this.metroControlBox1.Name = "metroControlBox1";
-            this.metroControlBox1.Size = new System.Drawing.Size(100, 25);
-            this.metroControlBox1.Style = ReaLTaiizor.Enum.Metro.Style.Light;
-            this.metroControlBox1.StyleManager = null;
-            this.metroControlBox1.TabIndex = 1;
-            this.metroControlBox1.Text = "metroControlBox1";
-            this.metroControlBox1.ThemeAuthor = "Taiizor";
-            this.metroControlBox1.ThemeName = "MetroLight";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Linen;
+            this.panel2.Controls.Add(this.nightControlBox1);
             this.panel2.Controls.Add(this.lbl_User);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.metroControlBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(230, 0);
             this.panel2.Name = "panel2";
@@ -112,6 +85,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RosyBrown;
+            this.panel1.Controls.Add(this.btn_Logout);
             this.panel1.Controls.Add(this.btn_account);
             this.panel1.Controls.Add(this.btn_share);
             this.panel1.Controls.Add(this.btn_customize);
@@ -123,6 +97,47 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(230, 657);
             this.panel1.TabIndex = 5;
+            // 
+            // btn_Logout
+            // 
+            this.btn_Logout.Alpha = 20;
+            this.btn_Logout.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Logout.Background = true;
+            this.btn_Logout.Background_WidthPen = 4F;
+            this.btn_Logout.BackgroundPen = true;
+            this.btn_Logout.ColorBackground = System.Drawing.Color.Transparent;
+            this.btn_Logout.ColorBackground_1 = System.Drawing.Color.RosyBrown;
+            this.btn_Logout.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_Logout.ColorBackground_Pen = System.Drawing.Color.Maroon;
+            this.btn_Logout.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btn_Logout.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btn_Logout.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.btn_Logout.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.btn_Logout.Effect_1 = true;
+            this.btn_Logout.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btn_Logout.Effect_1_Transparency = 25;
+            this.btn_Logout.Effect_2 = true;
+            this.btn_Logout.Effect_2_ColorBackground = System.Drawing.Color.Silver;
+            this.btn_Logout.Effect_2_Transparency = 20;
+            this.btn_Logout.Font = new System.Drawing.Font("Arial", 11F);
+            this.btn_Logout.ForeColor = System.Drawing.Color.Maroon;
+            this.btn_Logout.Lighting = false;
+            this.btn_Logout.LinearGradient_Background = false;
+            this.btn_Logout.LinearGradientPen = false;
+            this.btn_Logout.Location = new System.Drawing.Point(12, 618);
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.PenWidth = 15;
+            this.btn_Logout.Rounding = true;
+            this.btn_Logout.RoundingInt = 70;
+            this.btn_Logout.Size = new System.Drawing.Size(82, 27);
+            this.btn_Logout.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.btn_Logout.TabIndex = 23;
+            this.btn_Logout.Tag = "Cyber";
+            this.btn_Logout.TextButton = "Logout";
+            this.btn_Logout.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btn_Logout.Timer_Effect_1 = 5;
+            this.btn_Logout.Timer_RGB = 300;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
             // 
             // btn_account
             // 
@@ -235,10 +250,39 @@
             // 
             // panel_Center
             // 
+            this.panel_Center.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_Center.AutoScroll = true;
+            this.panel_Center.AutoSize = true;
             this.panel_Center.Location = new System.Drawing.Point(230, 43);
             this.panel_Center.Name = "panel_Center";
             this.panel_Center.Size = new System.Drawing.Size(773, 614);
             this.panel_Center.TabIndex = 7;
+            // 
+            // nightControlBox1
+            // 
+            this.nightControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nightControlBox1.BackColor = System.Drawing.Color.Transparent;
+            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nightControlBox1.DefaultLocation = true;
+            this.nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.EnableMaximizeButton = true;
+            this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.EnableMinimizeButton = true;
+            this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.Location = new System.Drawing.Point(634, 0);
+            this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.Name = "nightControlBox1";
+            this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
+            this.nightControlBox1.TabIndex = 0;
             // 
             // form_Admin
             // 
@@ -252,7 +296,6 @@
             this.Name = "form_Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_Admin";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.form_Admin_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -260,11 +303,11 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private ReaLTaiizor.Controls.MetroControlBox metroControlBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_User;
         private System.Windows.Forms.Label label1;
@@ -277,5 +320,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel_Center;
+        private ReaLTaiizor.Controls.CyberButton btn_Logout;
+        private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
     }
 }

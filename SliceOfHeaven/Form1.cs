@@ -68,5 +68,14 @@ namespace SliceOfHeaven
                 staff.Show();
             }
         }
+
+        private void metroControlBox1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            txtbox_Password.PasswordChar = checkBox1.Checked ? '\0' : '*';
+        }
     }
 }

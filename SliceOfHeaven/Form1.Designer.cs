@@ -39,10 +39,10 @@
             this.txtbox_Password = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.metroControlBox1 = new ReaLTaiizor.Controls.MetroControlBox();
             this.cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton4 = new ReaLTaiizor.Controls.CyberButton();
             this.label4 = new System.Windows.Forms.Label();
+            this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -179,7 +179,7 @@
             this.txtbox_Username.Location = new System.Drawing.Point(370, 203);
             this.txtbox_Username.Multiline = true;
             this.txtbox_Username.Name = "txtbox_Username";
-            this.txtbox_Username.Size = new System.Drawing.Size(274, 32);
+            this.txtbox_Username.Size = new System.Drawing.Size(339, 32);
             this.txtbox_Username.TabIndex = 3;
             // 
             // txtbox_Password
@@ -189,7 +189,7 @@
             this.txtbox_Password.Multiline = true;
             this.txtbox_Password.Name = "txtbox_Password";
             this.txtbox_Password.PasswordChar = '*';
-            this.txtbox_Password.Size = new System.Drawing.Size(274, 32);
+            this.txtbox_Password.Size = new System.Drawing.Size(339, 32);
             this.txtbox_Password.TabIndex = 5;
             // 
             // label3
@@ -205,40 +205,13 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(542, 338);
+            this.checkBox1.Location = new System.Drawing.Point(607, 338);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(102, 17);
             this.checkBox1.TabIndex = 6;
             this.checkBox1.Text = "Show Password";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // metroControlBox1
-            // 
-            this.metroControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroControlBox1.CloseHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.metroControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
-            this.metroControlBox1.CloseNormalForeColor = System.Drawing.Color.Gray;
-            this.metroControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroControlBox1.DefaultLocation = ReaLTaiizor.Enum.Metro.LocationType.Normal;
-            this.metroControlBox1.DisabledForeColor = System.Drawing.Color.DimGray;
-            this.metroControlBox1.IsDerivedStyle = true;
-            this.metroControlBox1.Location = new System.Drawing.Point(645, -1);
-            this.metroControlBox1.MaximizeBox = true;
-            this.metroControlBox1.MaximizeHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.metroControlBox1.MaximizeHoverForeColor = System.Drawing.Color.Gray;
-            this.metroControlBox1.MaximizeNormalForeColor = System.Drawing.Color.Gray;
-            this.metroControlBox1.MinimizeBox = true;
-            this.metroControlBox1.MinimizeHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.metroControlBox1.MinimizeHoverForeColor = System.Drawing.Color.Gray;
-            this.metroControlBox1.MinimizeNormalForeColor = System.Drawing.Color.Gray;
-            this.metroControlBox1.Name = "metroControlBox1";
-            this.metroControlBox1.Size = new System.Drawing.Size(100, 25);
-            this.metroControlBox1.Style = ReaLTaiizor.Enum.Metro.Style.Light;
-            this.metroControlBox1.StyleManager = null;
-            this.metroControlBox1.TabIndex = 7;
-            this.metroControlBox1.Text = "metroControlBox1";
-            this.metroControlBox1.ThemeAuthor = "Taiizor";
-            this.metroControlBox1.ThemeName = "MetroLight";
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // cyberButton3
             // 
@@ -332,15 +305,39 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "No account yet?";
             // 
+            // nightControlBox1
+            // 
+            this.nightControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nightControlBox1.BackColor = System.Drawing.Color.Transparent;
+            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nightControlBox1.DefaultLocation = true;
+            this.nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.EnableMaximizeButton = true;
+            this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.EnableMinimizeButton = true;
+            this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.Location = new System.Drawing.Point(605, -1);
+            this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.Name = "nightControlBox1";
+            this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
+            this.nightControlBox1.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 513);
+            this.Controls.Add(this.nightControlBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cyberButton4);
             this.Controls.Add(this.cyberButton3);
-            this.Controls.Add(this.metroControlBox1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.txtbox_Password);
             this.Controls.Add(this.label3);
@@ -369,12 +366,12 @@
         private System.Windows.Forms.TextBox txtbox_Password;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBox1;
-        private ReaLTaiizor.Controls.MetroControlBox metroControlBox1;
         private ReaLTaiizor.Controls.CyberButton btn_Admin;
         private ReaLTaiizor.Controls.CyberButton btn_Staff;
         private ReaLTaiizor.Controls.CyberButton cyberButton3;
         private ReaLTaiizor.Controls.CyberButton cyberButton4;
         private System.Windows.Forms.Label label4;
+        private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
     }
 }
 
