@@ -80,7 +80,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.RosyBrown;
+            this.panel1.BackColor = System.Drawing.Color.SandyBrown;
             this.panel1.Controls.Add(this.btn_Logout);
             this.panel1.Controls.Add(this.btn_account);
             this.panel1.Controls.Add(this.btn_share);
@@ -144,7 +144,7 @@
             this.btn_account.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_account.Image = ((System.Drawing.Image)(resources.GetObject("btn_account.Image")));
             this.btn_account.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_account.Location = new System.Drawing.Point(40, 337);
+            this.btn_account.Location = new System.Drawing.Point(40, 396);
             this.btn_account.Margin = new System.Windows.Forms.Padding(0);
             this.btn_account.Name = "btn_account";
             this.btn_account.Size = new System.Drawing.Size(190, 45);
@@ -162,7 +162,7 @@
             this.btn_share.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_share.Image = ((System.Drawing.Image)(resources.GetObject("btn_share.Image")));
             this.btn_share.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_share.Location = new System.Drawing.Point(39, 286);
+            this.btn_share.Location = new System.Drawing.Point(39, 345);
             this.btn_share.Margin = new System.Windows.Forms.Padding(0);
             this.btn_share.Name = "btn_share";
             this.btn_share.Size = new System.Drawing.Size(190, 45);
@@ -180,12 +180,12 @@
             this.btn_customize.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_customize.Image = ((System.Drawing.Image)(resources.GetObject("btn_customize.Image")));
             this.btn_customize.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_customize.Location = new System.Drawing.Point(40, 233);
+            this.btn_customize.Location = new System.Drawing.Point(40, 292);
             this.btn_customize.Margin = new System.Windows.Forms.Padding(0);
             this.btn_customize.Name = "btn_customize";
             this.btn_customize.Size = new System.Drawing.Size(190, 45);
             this.btn_customize.TabIndex = 7;
-            this.btn_customize.Text = "          Customize!";
+            this.btn_customize.Text = "          Order!";
             this.btn_customize.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_customize.UseVisualStyleBackColor = true;
             // 
@@ -198,7 +198,7 @@
             this.btn_products.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_products.Image = ((System.Drawing.Image)(resources.GetObject("btn_products.Image")));
             this.btn_products.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_products.Location = new System.Drawing.Point(40, 182);
+            this.btn_products.Location = new System.Drawing.Point(40, 241);
             this.btn_products.Margin = new System.Windows.Forms.Padding(0);
             this.btn_products.Name = "btn_products";
             this.btn_products.Size = new System.Drawing.Size(190, 45);
@@ -216,7 +216,7 @@
             this.btn_home.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_home.Image = ((System.Drawing.Image)(resources.GetObject("btn_home.Image")));
             this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_home.Location = new System.Drawing.Point(40, 130);
+            this.btn_home.Location = new System.Drawing.Point(40, 189);
             this.btn_home.Margin = new System.Windows.Forms.Padding(0);
             this.btn_home.Name = "btn_home";
             this.btn_home.Size = new System.Drawing.Size(190, 45);
@@ -237,10 +237,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-54, -101);
+            this.pictureBox1.Location = new System.Drawing.Point(20, -10);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(332, 300);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(181, 146);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 

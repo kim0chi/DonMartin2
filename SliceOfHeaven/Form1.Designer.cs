@@ -30,9 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Staff = new ReaLTaiizor.Controls.CyberButton();
-            this.btn_Admin = new ReaLTaiizor.Controls.CyberButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtbox_Username = new System.Windows.Forms.TextBox();
@@ -43,8 +41,9 @@
             this.cyberButton4 = new ReaLTaiizor.Controls.CyberButton();
             this.label4 = new System.Windows.Forms.Label();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -52,106 +51,22 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.RosyBrown;
-            this.panel1.Controls.Add(this.btn_Staff);
-            this.panel1.Controls.Add(this.btn_Admin);
-            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(34)))));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(348, 514);
             this.panel1.TabIndex = 0;
             // 
-            // btn_Staff
+            // pictureBox1
             // 
-            this.btn_Staff.Alpha = 20;
-            this.btn_Staff.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Staff.Background = true;
-            this.btn_Staff.Background_WidthPen = 4F;
-            this.btn_Staff.BackgroundPen = true;
-            this.btn_Staff.ColorBackground = System.Drawing.Color.RosyBrown;
-            this.btn_Staff.ColorBackground_1 = System.Drawing.Color.RosyBrown;
-            this.btn_Staff.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_Staff.ColorBackground_Pen = System.Drawing.Color.Maroon;
-            this.btn_Staff.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.btn_Staff.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.btn_Staff.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-            this.btn_Staff.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.btn_Staff.Effect_1 = true;
-            this.btn_Staff.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.btn_Staff.Effect_1_Transparency = 25;
-            this.btn_Staff.Effect_2 = true;
-            this.btn_Staff.Effect_2_ColorBackground = System.Drawing.Color.White;
-            this.btn_Staff.Effect_2_Transparency = 20;
-            this.btn_Staff.Font = new System.Drawing.Font("Arial", 11F);
-            this.btn_Staff.ForeColor = System.Drawing.Color.Maroon;
-            this.btn_Staff.Lighting = false;
-            this.btn_Staff.LinearGradient_Background = false;
-            this.btn_Staff.LinearGradientPen = false;
-            this.btn_Staff.Location = new System.Drawing.Point(179, 402);
-            this.btn_Staff.Name = "btn_Staff";
-            this.btn_Staff.PenWidth = 15;
-            this.btn_Staff.Rounding = true;
-            this.btn_Staff.RoundingInt = 70;
-            this.btn_Staff.Size = new System.Drawing.Size(108, 37);
-            this.btn_Staff.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.btn_Staff.TabIndex = 10;
-            this.btn_Staff.Tag = "Cyber";
-            this.btn_Staff.TextButton = "Employee";
-            this.btn_Staff.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.btn_Staff.Timer_Effect_1 = 5;
-            this.btn_Staff.Timer_RGB = 300;
-            this.btn_Staff.Click += new System.EventHandler(this.btn_Staff_Click);
-            // 
-            // btn_Admin
-            // 
-            this.btn_Admin.Alpha = 20;
-            this.btn_Admin.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Admin.Background = true;
-            this.btn_Admin.Background_WidthPen = 4F;
-            this.btn_Admin.BackgroundPen = true;
-            this.btn_Admin.ColorBackground = System.Drawing.Color.RosyBrown;
-            this.btn_Admin.ColorBackground_1 = System.Drawing.Color.RosyBrown;
-            this.btn_Admin.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_Admin.ColorBackground_Pen = System.Drawing.Color.Maroon;
-            this.btn_Admin.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.btn_Admin.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.btn_Admin.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-            this.btn_Admin.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.btn_Admin.Effect_1 = true;
-            this.btn_Admin.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.btn_Admin.Effect_1_Transparency = 25;
-            this.btn_Admin.Effect_2 = true;
-            this.btn_Admin.Effect_2_ColorBackground = System.Drawing.Color.White;
-            this.btn_Admin.Effect_2_Transparency = 20;
-            this.btn_Admin.Font = new System.Drawing.Font("Arial", 11F);
-            this.btn_Admin.ForeColor = System.Drawing.Color.Maroon;
-            this.btn_Admin.Lighting = false;
-            this.btn_Admin.LinearGradient_Background = false;
-            this.btn_Admin.LinearGradientPen = false;
-            this.btn_Admin.Location = new System.Drawing.Point(41, 402);
-            this.btn_Admin.Name = "btn_Admin";
-            this.btn_Admin.PenWidth = 15;
-            this.btn_Admin.Rounding = true;
-            this.btn_Admin.RoundingInt = 70;
-            this.btn_Admin.Size = new System.Drawing.Size(108, 37);
-            this.btn_Admin.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.btn_Admin.TabIndex = 9;
-            this.btn_Admin.Tag = "Cyber";
-            this.btn_Admin.TextButton = "Admin";
-            this.btn_Admin.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.btn_Admin.Timer_Effect_1 = 5;
-            this.btn_Admin.Timer_RGB = 300;
-            this.btn_Admin.Click += new System.EventHandler(this.cyberButton2_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-34, 13);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(431, 419);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-43, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(440, 470);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -320,7 +235,7 @@
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = true;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(605, -1);
+            this.nightControlBox1.Location = new System.Drawing.Point(607, -1);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -329,11 +244,23 @@
             this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
             this.nightControlBox1.TabIndex = 14;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Yu Gothic Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(366, 434);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(88, 19);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Admin Login";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 513);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.nightControlBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cyberButton4);
@@ -346,11 +273,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,19 +288,18 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtbox_Username;
         private System.Windows.Forms.TextBox txtbox_Password;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBox1;
-        private ReaLTaiizor.Controls.CyberButton btn_Admin;
-        private ReaLTaiizor.Controls.CyberButton btn_Staff;
         private ReaLTaiizor.Controls.CyberButton cyberButton3;
         private ReaLTaiizor.Controls.CyberButton cyberButton4;
         private System.Windows.Forms.Label label4;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

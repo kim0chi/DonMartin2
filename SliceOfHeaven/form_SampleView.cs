@@ -10,24 +10,24 @@ using System.Windows.Forms;
 
 namespace SliceOfHeaven
 {
-    public partial class form_SampleAdd : Form
+    public partial class form_SampleView : Form
     {
-        public form_SampleAdd()
+        public form_SampleView()
         {
             InitializeComponent();
         }
 
-        public virtual void btn_Save_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
-        public virtual void btn_Close_Click(object sender, EventArgs e)
+        public virtual void btn_Add_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
-        public virtual void form_SampleAdd_Load(object sender, EventArgs e)
+        public virtual void txtbox_Search_TextChanged(object sender, EventArgs e)
         {
 
         }

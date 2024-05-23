@@ -18,11 +18,12 @@ namespace SliceOfHeaven
 
         public static SqlConnection con = new SqlConnection(conString);
 
+        // For User's Validity with Database
         public static bool IsValidUser(string user, string pass)
         {
             bool isValid = false;
 
-            string qry = @"SELECT * from users where username = '"+user+"' and upass = '"+pass+"' ";
+            string qry = @"SELECT * from userz where username = '"+user+"' and uPass = '"+pass+"' ";
             SqlCommand cmd = new SqlCommand(qry, con);
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -31,12 +32,14 @@ namespace SliceOfHeaven
             if (dt.Rows.Count > 0)
             {
                 isValid = true;
-                USER = dt.Rows[0]["uName"].ToString();
+                USER = dt.Rows[0]["First_Name"].ToString();
             }
 
             return isValid;
         }
 
+        // To Display Customer Name
+        
         public static string user;
         public static string admin;
         public static string staff;
@@ -59,18 +62,84 @@ namespace SliceOfHeaven
             private set { staff = value; }
         }
 
-        public static void Register(string username, string name, string password, string phone, string email)
+        // To Register New Users
+        public static void Register(string username, string name, string lastname, string password, string phone, string email)
         {
-            Random rnd = new Random();
-            int x = rnd.Next(5, 100);
-            string y = x.ToString();
-            string qry = @"INSERT INTO [dbo].[users] ([userID],[username],[upass],[uName],[uPhone],[uMail])VALUES('"+y+"','" + username + "','" + password + "','" + name + "','" + phone + "','" + email + "')";
+            string qry = @"INSERT INTO [dbo].[userz] ([First_Name],[Last_Name],[username],[uPass],[uPhone],[uEmail])VALUES('" + name + "','" + lastname + "','" + username + "','"+ password+"','" + phone + "','" + email + "')";
             con.Open();
             SqlCommand cmd = new SqlCommand(qry, con);
             cmd.ExecuteNonQuery();
             con.Close();
         }
 
+        public static bool IsDuplicateUser(string username, string phone, string email)
+        {
+            string qry = @"SELECT COUNT(1) FROM userz WHERE username = @username OR uPhone = @uPhone OR uEmail = @uEmail";
+
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                using (SqlCommand cmd = new SqlCommand(qry, con))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@uPhone", phone);
+                    cmd.Parameters.AddWithValue("@uEmail", email);
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Occured");
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+        }
+
+        public static bool IsDuplicateName(string name, string lastname)
+        {
+            string qry = @"SELECT COUNT(1) FROM userz WHERE First_Name = @First_Name AND Last_Name = @Last_Name";
+
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                using (SqlCommand cmd = new SqlCommand(qry, con))
+                {
+                    cmd.Parameters.AddWithValue("@First_Name", name);
+                    cmd.Parameters.AddWithValue("@Last_Name", lastname);
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Occured");
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+        }
+
+        // For Admin for Valid Credentials with Database
         public static bool IsValidAdmin(string user, string pass)
         {
             bool isValid = false;
@@ -90,6 +159,7 @@ namespace SliceOfHeaven
             return isValid;
         }
 
+        // For Staff checking valid credentials with database
         public static bool IsValidStaff(string user, string pass)
         {
             bool isValid = false;
@@ -108,6 +178,7 @@ namespace SliceOfHeaven
 
             return isValid;
         }
+
 
         // Method for CURD Operation
         public static int SQL(string qry, Hashtable ht)
@@ -166,6 +237,7 @@ namespace SliceOfHeaven
                 con.Close();
             }
         }
+
     }
 
 }

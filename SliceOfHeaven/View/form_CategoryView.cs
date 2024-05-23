@@ -8,16 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SliceOfHeaven
+namespace SliceOfHeaven.View
 {
-    public partial class form_Home : Form
+    public partial class form_CategoryView : form_SampleView
     {
-        public form_Home()
+        public form_CategoryView()
         {
             InitializeComponent();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        public override void btn_Add_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public override void txtbox_Search_TextChanged(object sender, EventArgs e)
         {
 
         }

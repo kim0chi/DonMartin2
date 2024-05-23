@@ -54,7 +54,8 @@ namespace SliceOfHeaven
 
         private void form_Main_Load_1(object sender, EventArgs e)
         {
-            lbl_User.Text = MainClass.USER;
+            string displayUser = MainClass.USER;
+            lbl_User.Text = $"{displayUser}!";
         }
 
         private void panel_Center_Paint(object sender, PaintEventArgs e)

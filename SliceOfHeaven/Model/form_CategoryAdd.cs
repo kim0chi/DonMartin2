@@ -8,26 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SliceOfHeaven
+namespace SliceOfHeaven.Model
 {
-    public partial class form_SampleAdd : Form
+    public partial class form_CategoryAdd : form_SampleAdd
     {
-        public form_SampleAdd()
+        public form_CategoryAdd()
         {
             InitializeComponent();
         }
 
-        public virtual void btn_Save_Click(object sender, EventArgs e)
-        {
-            
-        }
+        public int id = 0;
 
-        public virtual void btn_Close_Click(object sender, EventArgs e)
+        public override void btn_Close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        public virtual void form_SampleAdd_Load(object sender, EventArgs e)
+        public override void form_SampleAdd_Load(object sender, EventArgs e)
         {
 
         }

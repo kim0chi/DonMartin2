@@ -21,11 +21,17 @@ namespace SliceOfHeaven
         {
             if (MainClass.IsValidUser(txtbox_Username.Text, txtbox_Password.Text) == false)
             {
-                MessageBox.Show("Invalid Username or Password!");
+                MessageBox.Show("Invalid Username or Password!","Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (IsAnyTextBoxEmpty())
+            {
+                MessageBox.Show("All fields must be filled out", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
             {
+                MessageBox.Show("Sign In successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
                 form_Main main = new form_Main();
                 main.Show();
@@ -41,9 +47,7 @@ namespace SliceOfHeaven
             }
             else
             {
-                this.Hide();
-                form_Admin admin = new form_Admin();
-                admin.Show();
+                
             }
         }
 
@@ -77,5 +81,33 @@ namespace SliceOfHeaven
         {
             txtbox_Password.PasswordChar = checkBox1.Checked ? '\0' : '*';
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            form_chooseLogin choose = new form_chooseLogin();
+            choose.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool IsAnyTextBoxEmpty()
+        {
+            var textBoxes = this.Controls.OfType<TextBox>();
+
+            foreach (var textBox in textBoxes)
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace SliceOfHeaven
+﻿namespace SliceOfHeaven.Model
 {
-    partial class form_Home
+    partial class form_CategoryAdd
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_Home));
-            this.SuspendLayout();
-            // 
-            // form_Home
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.RosyBrown;
-            this.ClientSize = new System.Drawing.Size(773, 614);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "form_Home";
-            this.Text = "form_Home";
-            this.ResumeLayout(false);
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "form_CategoryAdd";
         }
 
         #endregion

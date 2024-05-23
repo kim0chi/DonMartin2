@@ -68,11 +68,29 @@
     <Compile Include="form_Admin.Designer.cs">
       <DependentUpon>form_Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_AdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_AdminLogin.Designer.cs">
+      <DependentUpon>form_AdminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_chooseLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_chooseLogin.Designer.cs">
+      <DependentUpon>form_chooseLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_Employee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form_Employee.Designer.cs">
       <DependentUpon>form_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_EmployeeLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_EmployeeLogin.Designer.cs">
+      <DependentUpon>form_EmployeeLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="form_Home.cs">
       <SubType>Form</SubType>
@@ -92,6 +110,12 @@
     <Compile Include="form_SampleAdd.Designer.cs">
       <DependentUpon>form_SampleAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_SampleView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_SampleView.Designer.cs">
+      <DependentUpon>form_SampleView.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_Signup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,16 +123,37 @@
       <DependentUpon>form_Signup.cs</DependentUpon>
     </Compile>
     <Compile Include="MainClass.cs" />
+    <Compile Include="Model\form_CategoryAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\form_CategoryAdd.Designer.cs">
+      <DependentUpon>form_CategoryAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\form_CategoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\form_CategoryView.Designer.cs">
+      <DependentUpon>form_CategoryView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_Admin.resx">
       <DependentUpon>form_Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form_AdminLogin.resx">
+      <DependentUpon>form_AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_chooseLogin.resx">
+      <DependentUpon>form_chooseLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form_Employee.resx">
       <DependentUpon>form_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_EmployeeLogin.resx">
+      <DependentUpon>form_EmployeeLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_Home.resx">
       <DependentUpon>form_Home.cs</DependentUpon>
@@ -118,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_SampleAdd.resx">
       <DependentUpon>form_SampleAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_SampleView.resx">
+      <DependentUpon>form_SampleView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_Signup.resx">
       <DependentUpon>form_Signup.cs</DependentUpon>
@@ -132,6 +180,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\form_CategoryView.resx">
+      <DependentUpon>form_CategoryView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -147,9 +198,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="Resources\" />
-    <Folder Include="View\" />
+    <None Include="Resources\icons8-size-64.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-write-481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-trash-641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-menu-50.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

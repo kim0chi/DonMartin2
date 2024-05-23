@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_Employee));
             this.panel_Center = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.lbl_User = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -42,7 +43,6 @@
             this.btn_home = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -68,6 +68,30 @@
             this.panel2.Size = new System.Drawing.Size(773, 43);
             this.panel2.TabIndex = 6;
             // 
+            // nightControlBox1
+            // 
+            this.nightControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nightControlBox1.BackColor = System.Drawing.Color.Transparent;
+            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nightControlBox1.DefaultLocation = true;
+            this.nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.EnableMaximizeButton = true;
+            this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.EnableMinimizeButton = true;
+            this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox1.Location = new System.Drawing.Point(634, 0);
+            this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox1.Name = "nightControlBox1";
+            this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
+            this.nightControlBox1.TabIndex = 15;
+            // 
             // lbl_User
             // 
             this.lbl_User.AutoSize = true;
@@ -91,7 +115,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.RosyBrown;
+            this.panel1.BackColor = System.Drawing.Color.SandyBrown;
             this.panel1.Controls.Add(this.btn_Logout);
             this.panel1.Controls.Add(this.btn_account);
             this.panel1.Controls.Add(this.btn_share);
@@ -155,7 +179,7 @@
             this.btn_account.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_account.Image = ((System.Drawing.Image)(resources.GetObject("btn_account.Image")));
             this.btn_account.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_account.Location = new System.Drawing.Point(40, 337);
+            this.btn_account.Location = new System.Drawing.Point(40, 407);
             this.btn_account.Margin = new System.Windows.Forms.Padding(0);
             this.btn_account.Name = "btn_account";
             this.btn_account.Size = new System.Drawing.Size(190, 45);
@@ -173,7 +197,7 @@
             this.btn_share.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_share.Image = ((System.Drawing.Image)(resources.GetObject("btn_share.Image")));
             this.btn_share.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_share.Location = new System.Drawing.Point(39, 286);
+            this.btn_share.Location = new System.Drawing.Point(39, 356);
             this.btn_share.Margin = new System.Windows.Forms.Padding(0);
             this.btn_share.Name = "btn_share";
             this.btn_share.Size = new System.Drawing.Size(190, 45);
@@ -191,7 +215,7 @@
             this.btn_customize.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_customize.Image = ((System.Drawing.Image)(resources.GetObject("btn_customize.Image")));
             this.btn_customize.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_customize.Location = new System.Drawing.Point(40, 233);
+            this.btn_customize.Location = new System.Drawing.Point(40, 303);
             this.btn_customize.Margin = new System.Windows.Forms.Padding(0);
             this.btn_customize.Name = "btn_customize";
             this.btn_customize.Size = new System.Drawing.Size(190, 45);
@@ -209,7 +233,7 @@
             this.btn_products.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_products.Image = ((System.Drawing.Image)(resources.GetObject("btn_products.Image")));
             this.btn_products.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_products.Location = new System.Drawing.Point(40, 182);
+            this.btn_products.Location = new System.Drawing.Point(40, 252);
             this.btn_products.Margin = new System.Windows.Forms.Padding(0);
             this.btn_products.Name = "btn_products";
             this.btn_products.Size = new System.Drawing.Size(190, 45);
@@ -227,7 +251,7 @@
             this.btn_home.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_home.Image = ((System.Drawing.Image)(resources.GetObject("btn_home.Image")));
             this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_home.Location = new System.Drawing.Point(40, 130);
+            this.btn_home.Location = new System.Drawing.Point(40, 200);
             this.btn_home.Margin = new System.Windows.Forms.Padding(0);
             this.btn_home.Name = "btn_home";
             this.btn_home.Size = new System.Drawing.Size(190, 45);
@@ -248,36 +272,12 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-54, -101);
+            this.pictureBox1.Location = new System.Drawing.Point(20, -10);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(332, 300);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(184, 149);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
-            // 
-            // nightControlBox1
-            // 
-            this.nightControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nightControlBox1.BackColor = System.Drawing.Color.Transparent;
-            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nightControlBox1.DefaultLocation = true;
-            this.nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.EnableMaximizeButton = true;
-            this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.EnableMinimizeButton = true;
-            this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(634, 0);
-            this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.Name = "nightControlBox1";
-            this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
-            this.nightControlBox1.TabIndex = 15;
             // 
             // form_Employee
             // 
