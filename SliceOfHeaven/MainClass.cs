@@ -198,7 +198,10 @@ namespace SliceOfHeaven
                 {
                     con.Open();
                 }
-                if(con.State == ConnectionState.Open)
+
+                res = cmd.ExecuteNonQuery();
+
+                if (con.State == ConnectionState.Open)
                 {
                     con.Close();
                 }
@@ -237,7 +240,5 @@ namespace SliceOfHeaven
                 con.Close();
             }
         }
-
     }
-
 }
