@@ -34,12 +34,13 @@
             this.lbl_User = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_Logout = new ReaLTaiizor.Controls.CyberButton();
             this.btn_account = new System.Windows.Forms.Button();
             this.btn_share = new System.Windows.Forms.Button();
             this.btn_customize = new System.Windows.Forms.Button();
             this.btn_products = new System.Windows.Forms.Button();
-            this.btn_home = new System.Windows.Forms.Button();
+            this.btn_tables = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_Center = new System.Windows.Forms.Panel();
@@ -109,12 +110,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SandyBrown;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btn_Logout);
             this.panel1.Controls.Add(this.btn_account);
             this.panel1.Controls.Add(this.btn_share);
             this.panel1.Controls.Add(this.btn_customize);
             this.panel1.Controls.Add(this.btn_products);
-            this.panel1.Controls.Add(this.btn_home);
+            this.panel1.Controls.Add(this.btn_tables);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -122,9 +124,29 @@
             this.panel1.Size = new System.Drawing.Size(230, 790);
             this.panel1.TabIndex = 5;
             // 
+            // button1
+            // 
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Yu Gothic Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(40, 210);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(190, 45);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "          Categories";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btn_Logout
             // 
             this.btn_Logout.Alpha = 20;
+            this.btn_Logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Logout.BackColor = System.Drawing.Color.Transparent;
             this.btn_Logout.Background = true;
             this.btn_Logout.Background_WidthPen = 4F;
@@ -148,7 +170,7 @@
             this.btn_Logout.Lighting = false;
             this.btn_Logout.LinearGradient_Background = false;
             this.btn_Logout.LinearGradientPen = false;
-            this.btn_Logout.Location = new System.Drawing.Point(12, 618);
+            this.btn_Logout.Location = new System.Drawing.Point(3, 760);
             this.btn_Logout.Name = "btn_Logout";
             this.btn_Logout.PenWidth = 15;
             this.btn_Logout.Rounding = true;
@@ -172,7 +194,7 @@
             this.btn_account.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_account.Image = ((System.Drawing.Image)(resources.GetObject("btn_account.Image")));
             this.btn_account.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_account.Location = new System.Drawing.Point(40, 397);
+            this.btn_account.Location = new System.Drawing.Point(40, 464);
             this.btn_account.Margin = new System.Windows.Forms.Padding(0);
             this.btn_account.Name = "btn_account";
             this.btn_account.Size = new System.Drawing.Size(190, 45);
@@ -190,7 +212,7 @@
             this.btn_share.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_share.Image = ((System.Drawing.Image)(resources.GetObject("btn_share.Image")));
             this.btn_share.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_share.Location = new System.Drawing.Point(39, 346);
+            this.btn_share.Location = new System.Drawing.Point(39, 413);
             this.btn_share.Margin = new System.Windows.Forms.Padding(0);
             this.btn_share.Name = "btn_share";
             this.btn_share.Size = new System.Drawing.Size(190, 45);
@@ -198,6 +220,7 @@
             this.btn_share.Text = "          Staff";
             this.btn_share.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_share.UseVisualStyleBackColor = true;
+            this.btn_share.Click += new System.EventHandler(this.btn_share_Click);
             // 
             // btn_customize
             // 
@@ -208,7 +231,7 @@
             this.btn_customize.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_customize.Image = ((System.Drawing.Image)(resources.GetObject("btn_customize.Image")));
             this.btn_customize.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_customize.Location = new System.Drawing.Point(40, 293);
+            this.btn_customize.Location = new System.Drawing.Point(40, 360);
             this.btn_customize.Margin = new System.Windows.Forms.Padding(0);
             this.btn_customize.Name = "btn_customize";
             this.btn_customize.Size = new System.Drawing.Size(190, 45);
@@ -226,7 +249,7 @@
             this.btn_products.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_products.Image = ((System.Drawing.Image)(resources.GetObject("btn_products.Image")));
             this.btn_products.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_products.Location = new System.Drawing.Point(40, 242);
+            this.btn_products.Location = new System.Drawing.Point(40, 309);
             this.btn_products.Margin = new System.Windows.Forms.Padding(0);
             this.btn_products.Name = "btn_products";
             this.btn_products.Size = new System.Drawing.Size(190, 45);
@@ -234,25 +257,26 @@
             this.btn_products.Text = "          Products";
             this.btn_products.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_products.UseVisualStyleBackColor = true;
+            this.btn_products.Click += new System.EventHandler(this.btn_products_Click);
             // 
-            // btn_home
+            // btn_tables
             // 
-            this.btn_home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_home.FlatAppearance.BorderSize = 0;
-            this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_home.Font = new System.Drawing.Font("Yu Gothic Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_home.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_home.Image = ((System.Drawing.Image)(resources.GetObject("btn_home.Image")));
-            this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_home.Location = new System.Drawing.Point(40, 190);
-            this.btn_home.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_home.Name = "btn_home";
-            this.btn_home.Size = new System.Drawing.Size(190, 45);
-            this.btn_home.TabIndex = 4;
-            this.btn_home.Text = "          Categories";
-            this.btn_home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_home.UseVisualStyleBackColor = true;
-            this.btn_home.Click += new System.EventHandler(this.btn_home_Click_1);
+            this.btn_tables.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_tables.FlatAppearance.BorderSize = 0;
+            this.btn_tables.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_tables.Font = new System.Drawing.Font("Yu Gothic Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tables.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_tables.Image = global::SliceOfHeaven.Properties.Resources.icons8_table_30;
+            this.btn_tables.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_tables.Location = new System.Drawing.Point(40, 257);
+            this.btn_tables.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_tables.Name = "btn_tables";
+            this.btn_tables.Size = new System.Drawing.Size(190, 45);
+            this.btn_tables.TabIndex = 4;
+            this.btn_tables.Text = "          Tables";
+            this.btn_tables.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_tables.UseVisualStyleBackColor = true;
+            this.btn_tables.Click += new System.EventHandler(this.btn_home_Click_1);
             // 
             // panel3
             // 
@@ -283,6 +307,7 @@
             this.panel_Center.Name = "panel_Center";
             this.panel_Center.Size = new System.Drawing.Size(954, 747);
             this.panel_Center.TabIndex = 7;
+            this.panel_Center.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Center_Paint);
             // 
             // form_Admin
             // 
@@ -316,11 +341,12 @@
         private System.Windows.Forms.Button btn_share;
         private System.Windows.Forms.Button btn_customize;
         private System.Windows.Forms.Button btn_products;
-        private System.Windows.Forms.Button btn_home;
+        private System.Windows.Forms.Button btn_tables;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel_Center;
         private ReaLTaiizor.Controls.CyberButton btn_Logout;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

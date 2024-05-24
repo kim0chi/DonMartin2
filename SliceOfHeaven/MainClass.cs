@@ -9,6 +9,8 @@ using System.Data.SqlClient;
 using System.Collections;
 using System.Dynamic;
 using System.Windows.Forms;
+using ReaLTaiizor.Enum.Poison;
+using System.Drawing;
 
 namespace SliceOfHeaven
 {
@@ -72,6 +74,7 @@ namespace SliceOfHeaven
             con.Close();
         }
 
+        // To Check for Duplicate Users
         public static bool IsDuplicateUser(string username, string phone, string email)
         {
             string qry = @"SELECT COUNT(1) FROM userz WHERE username = @username OR uPhone = @uPhone OR uEmail = @uEmail";
@@ -106,6 +109,7 @@ namespace SliceOfHeaven
             }
         }
 
+        // To Check for Duplicate Names
         public static bool IsDuplicateName(string name, string lastname)
         {
             string qry = @"SELECT COUNT(1) FROM userz WHERE First_Name = @First_Name AND Last_Name = @Last_Name";
@@ -205,7 +209,7 @@ namespace SliceOfHeaven
                 {
                     con.Close();
                 }
-                res = cmd.ExecuteNonQuery();
+
             }
             catch (Exception ex)
             {
@@ -218,6 +222,9 @@ namespace SliceOfHeaven
         // For Loading Data from database
         public static void LoadData(string qry, DataGridView gv, ListBox lb)
         {
+            // Serial Number
+            gv.CellFormatting += new DataGridViewCellFormattingEventHandler(Gv_CellFormatting);
+
             try
             {
                 SqlCommand cmd = new SqlCommand(qry, con);
@@ -228,8 +235,8 @@ namespace SliceOfHeaven
 
                 for (int i = 0; i < lb.Items.Count; i++)
                 {
-                    string coldNam1 = ((DataGridViewColumn)lb.Items[i]).Name;
-                    gv.Columns[coldNam1].DataPropertyName = dt.Columns[i].ToString();   
+                    string colNam1 = ((DataGridViewColumn)lb.Items[i]).Name;
+                    gv.Columns[colNam1].DataPropertyName = dt.Columns[i].ToString();   
                 }
                  
                 gv.DataSource = dt;
@@ -239,6 +246,141 @@ namespace SliceOfHeaven
                 MessageBox.Show(ex.ToString());
                 con.Close();
             }
+        }
+
+        private static void Gv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            System.Windows.Forms.DataGridView gv = (System.Windows.Forms.DataGridView)sender;
+            int count = 0;
+
+            foreach (DataGridViewRow row in gv.Rows)
+            {
+                count++;
+                row.Cells[0].Value = count;
+            }
+        }
+
+        // To Check For Duplicate Categories
+        public static bool IsDuplicateCategoryName(string categoryName)
+        {
+            try
+            {
+                string checkDuplicateQuery = "SELECT COUNT(*) FROM category WHERE catName = @Name";
+                Hashtable ht = new Hashtable();
+                ht.Add("@Name", categoryName);
+
+                int existingCount = (int)MainClass.ScalarSQL(checkDuplicateQuery, ht);
+                return existingCount > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while checking for duplicate category name: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true; // Treat error as if duplicate exists to prevent unintended insertion
+            }
+        }
+
+        public static bool IsDuplicateStaff(string categoryName)
+        {
+            try
+            {
+                string checkDuplicateQuery = "SELECT COUNT(*) FROM staff WHERE sName = @Name";
+                Hashtable ht = new Hashtable();
+                ht.Add("@Name", categoryName);
+
+                int existingCount = (int)MainClass.ScalarSQL(checkDuplicateQuery, ht);
+                return existingCount > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while checking for duplicate category name: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true; // Treat error as if duplicate exists to prevent unintended insertion
+            }
+        }
+
+        public static bool IsDuplicateProduct(string categoryName)
+        {
+            try
+            {
+                string checkDuplicateQuery = "SELECT COUNT(*) FROM products WHERE pName = @Name";
+                Hashtable ht = new Hashtable();
+                ht.Add("@Name", categoryName);
+
+                int existingCount = (int)MainClass.ScalarSQL(checkDuplicateQuery, ht);
+                return existingCount > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while checking for duplicate category name: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true; // Treat error as if duplicate exists to prevent unintended insertion
+            }
+        }
+
+        // For Scalar SQL connectivity
+        public static object ScalarSQL(string qry, Hashtable ht)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(qry, con))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    foreach (DictionaryEntry item in ht)
+                    {
+                        cmd.Parameters.AddWithValue(item.Key.ToString(), item.Value);
+                    }
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
+                    return cmd.ExecuteScalar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while executing SQL query: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+        }
+
+        public static void BlurBackground(Form Model)
+        {
+            Form Background = new Form();
+            using (Model)
+            {
+                Background.StartPosition = FormStartPosition.CenterScreen;
+                Background.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                Background.Opacity = 0.5d;
+                Background.BackColor = Color.Black;
+                Background.Size = form_Admin.Instance.Size;
+                Background.Location = form_Admin.Instance.Location;
+                Background.ShowInTaskbar = false;
+                Background.Show();
+                Model.Owner = Background;
+                Model.ShowDialog(Background);
+                Background.Dispose();
+            }
+        }
+
+        // For CB Fill
+
+        public static void CBFIll(string qry, ComboBox cb)
+        {
+            SqlCommand cmd = new SqlCommand (qry, con);
+            cmd.CommandType = CommandType.Text;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            cb.DisplayMember = "name";
+            cb.ValueMember = "id";
+            cb.DataSource = dt;
+            cb.SelectedIndex = -1;
         }
     }
 }

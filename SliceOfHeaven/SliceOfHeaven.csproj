@@ -129,6 +129,24 @@
     <Compile Include="Model\form_CategoryAdd.Designer.cs">
       <DependentUpon>form_CategoryAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\form_ProductAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\form_ProductAdd.Designer.cs">
+      <DependentUpon>form_ProductAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\form_StaffAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\form_StaffAdd.Designer.cs">
+      <DependentUpon>form_StaffAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\form_TableAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\form_TableAdd.Designer.cs">
+      <DependentUpon>form_TableAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\form_CategoryView.cs">
@@ -136,6 +154,24 @@
     </Compile>
     <Compile Include="View\form_CategoryView.Designer.cs">
       <DependentUpon>form_CategoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\form_ProductView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\form_ProductView.Designer.cs">
+      <DependentUpon>form_ProductView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\form_StaffView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\form_StaffView.Designer.cs">
+      <DependentUpon>form_StaffView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\form_TableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\form_TableView.Designer.cs">
+      <DependentUpon>form_TableView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -170,6 +206,18 @@
     <EmbeddedResource Include="form_Signup.resx">
       <DependentUpon>form_Signup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Model\form_CategoryAdd.resx">
+      <DependentUpon>form_CategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\form_ProductAdd.resx">
+      <DependentUpon>form_ProductAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\form_StaffAdd.resx">
+      <DependentUpon>form_StaffAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\form_TableAdd.resx">
+      <DependentUpon>form_TableAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -182,6 +230,15 @@
     </Compile>
     <EmbeddedResource Include="View\form_CategoryView.resx">
       <DependentUpon>form_CategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\form_ProductView.resx">
+      <DependentUpon>form_ProductView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\form_StaffView.resx">
+      <DependentUpon>form_StaffView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\form_TableView.resx">
+      <DependentUpon>form_TableView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -209,6 +266,29 @@
   <ItemGroup>
     <None Include="Resources\icons8-menu-50.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-category-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-table-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-table-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-staff-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staffred100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-product-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bag-96.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

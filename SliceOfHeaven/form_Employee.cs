@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SliceOfHeaven.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace SliceOfHeaven
 {
     public partial class form_Employee : Form
     {
+        form_TableView table = new form_TableView();
         public form_Employee()
         {
             InitializeComponent();
@@ -24,16 +26,16 @@ namespace SliceOfHeaven
 
         public void AddControls(Form f)
         {
-            panel_Center.Controls.Clear();
+            panel_CenterScreen.Controls.Clear();
             f.Dock = DockStyle.Fill;
             f.TopLevel = false;
-            panel_Center.Controls.Add(f);
+            panel_CenterScreen.Controls.Add(f);
             f.Show();
         }
 
         private void btn_home_Click(object sender, EventArgs e)
         {
-            AddControls(new form_Home());
+            AddControls(new form_TableView());
         }
 
         private void lbl_User_Click(object sender, EventArgs e)
@@ -46,6 +48,11 @@ namespace SliceOfHeaven
             this.Hide();
             Form1 form = new Form1();
             form.Show();
+        }
+
+        private void btn_home_Click_1(object sender, EventArgs e)
+        {
+            AddControls(new form_TableView());
         }
     }
 }

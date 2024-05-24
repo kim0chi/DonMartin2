@@ -36,12 +36,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Logout = new ReaLTaiizor.Controls.CyberButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel_CenterScreen = new System.Windows.Forms.Panel();
             this.btn_account = new System.Windows.Forms.Button();
             this.btn_share = new System.Windows.Forms.Button();
             this.btn_customize = new System.Windows.Forms.Button();
             this.btn_products = new System.Windows.Forms.Button();
             this.btn_home = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -65,7 +66,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(230, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(773, 43);
+            this.panel2.Size = new System.Drawing.Size(954, 43);
             this.panel2.TabIndex = 6;
             // 
             // nightControlBox1
@@ -83,7 +84,7 @@
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = true;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(634, 0);
+            this.nightControlBox1.Location = new System.Drawing.Point(815, 0);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -126,12 +127,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(230, 657);
+            this.panel1.Size = new System.Drawing.Size(230, 790);
             this.panel1.TabIndex = 5;
             // 
             // btn_Logout
             // 
             this.btn_Logout.Alpha = 20;
+            this.btn_Logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Logout.BackColor = System.Drawing.Color.Transparent;
             this.btn_Logout.Background = true;
             this.btn_Logout.Background_WidthPen = 4F;
@@ -155,7 +157,7 @@
             this.btn_Logout.Lighting = false;
             this.btn_Logout.LinearGradient_Background = false;
             this.btn_Logout.LinearGradientPen = false;
-            this.btn_Logout.Location = new System.Drawing.Point(3, 627);
+            this.btn_Logout.Location = new System.Drawing.Point(0, 760);
             this.btn_Logout.Name = "btn_Logout";
             this.btn_Logout.PenWidth = 15;
             this.btn_Logout.Rounding = true;
@@ -169,6 +171,22 @@
             this.btn_Logout.Timer_Effect_1 = 5;
             this.btn_Logout.Timer_RGB = 300;
             this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel_Center);
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(230, 128);
+            this.panel3.TabIndex = 5;
+            // 
+            // panel_CenterScreen
+            // 
+            this.panel_CenterScreen.Location = new System.Drawing.Point(230, 44);
+            this.panel_CenterScreen.Name = "panel_CenterScreen";
+            this.panel_CenterScreen.Size = new System.Drawing.Size(954, 746);
+            this.panel_CenterScreen.TabIndex = 7;
             // 
             // btn_account
             // 
@@ -249,25 +267,17 @@
             this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_home.Font = new System.Drawing.Font("Yu Gothic Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_home.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_home.Image = ((System.Drawing.Image)(resources.GetObject("btn_home.Image")));
+            this.btn_home.Image = global::SliceOfHeaven.Properties.Resources.icons8_table_30;
             this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_home.Location = new System.Drawing.Point(40, 200);
             this.btn_home.Margin = new System.Windows.Forms.Padding(0);
             this.btn_home.Name = "btn_home";
             this.btn_home.Size = new System.Drawing.Size(190, 45);
             this.btn_home.TabIndex = 4;
-            this.btn_home.Text = "          Home";
+            this.btn_home.Text = "          Tables";
             this.btn_home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_home.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.panel_Center);
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(230, 128);
-            this.panel3.TabIndex = 5;
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click_1);
             // 
             // pictureBox1
             // 
@@ -283,7 +293,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1003, 657);
+            this.ClientSize = new System.Drawing.Size(1184, 790);
+            this.Controls.Add(this.panel_CenterScreen);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -316,5 +327,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private ReaLTaiizor.Controls.CyberButton btn_Logout;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private System.Windows.Forms.Panel panel_CenterScreen;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace SliceOfHeaven.View
 {
-    partial class form_CategoryView
+    partial class form_TableView
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_CategoryView));
             this.dgv_CategoryView = new System.Windows.Forms.DataGridView();
             this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,15 +42,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CategoryView)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtbox_Search
-            // 
-            this.txtbox_Search.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbox_Search.TextChanged += new System.EventHandler(this.txtbox_Search_TextChanged_1);
-            // 
             // label2
             // 
-            this.label2.Size = new System.Drawing.Size(142, 27);
-            this.label2.Text = "Category List";
+            this.label2.Size = new System.Drawing.Size(119, 27);
+            this.label2.Text = "Table View";
             // 
             // dgv_CategoryView
             // 
@@ -95,7 +89,7 @@
             this.dgv_CategoryView.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_CategoryView.EnableHeadersVisualStyles = false;
             this.dgv_CategoryView.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dgv_CategoryView.Location = new System.Drawing.Point(59, 192);
+            this.dgv_CategoryView.Location = new System.Drawing.Point(59, 181);
             this.dgv_CategoryView.Name = "dgv_CategoryView";
             this.dgv_CategoryView.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -107,8 +101,9 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_CategoryView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_CategoryView.Size = new System.Drawing.Size(883, 427);
-            this.dgv_CategoryView.TabIndex = 5;
+            this.dgv_CategoryView.TabIndex = 6;
             this.dgv_CategoryView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CategoryView_CellClick);
+            this.dgv_CategoryView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CategoryView_CellContentClick);
             // 
             // dgvid
             // 
@@ -157,16 +152,15 @@
             this.dgvdel.ReadOnly = true;
             this.dgvdel.Width = 50;
             // 
-            // form_CategoryView
+            // form_TableView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 747);
             this.Controls.Add(this.dgv_CategoryView);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "form_CategoryView";
-            this.Text = "form_CategoryView";
-            this.Load += new System.EventHandler(this.form_CategoryView_Load);
+            this.Name = "form_TableView";
+            this.Text = "form_TableView";
+            this.Load += new System.EventHandler(this.form_TableView_Load_1);
             this.Controls.SetChildIndex(this.btn_Add, 0);
             this.Controls.SetChildIndex(this.txtbox_Search, 0);
             this.Controls.SetChildIndex(this.label1, 0);

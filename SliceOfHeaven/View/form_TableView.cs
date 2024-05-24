@@ -12,28 +12,29 @@ using System.Windows.Forms;
 
 namespace SliceOfHeaven.View
 {
-    public partial class form_CategoryView : form_SampleView
+    public partial class form_TableView : form_SampleView
     {
-        public form_CategoryView()
+        form_TableAdd add = new form_TableAdd();
+        Hashtable ht = new Hashtable();
+
+        public form_TableView()
         {
             InitializeComponent();
         }
-
         public void GetData()
         {
-            string qry = "SELECT* FROM category WHERE catName LIKE '%"+ txtbox_Search.Text +"%'";
+            string qry = "SELECT* FROM tables WHERE tname LIKE '%" + txtbox_Search.Text + "%'";
             ListBox lb = new ListBox();
             lb.Items.Add(dgvid);
             lb.Items.Add(dgvname);
 
             MainClass.LoadData(qry, dgv_CategoryView, lb);
         }
-
         public override void btn_Add_Click(object sender, EventArgs e)
         {
-            //form_CategoryAdd add = new form_CategoryAdd();
             //add.ShowDialog();
-            MainClass.BlurBackground(new form_CategoryAdd());
+
+            MainClass.BlurBackground(new form_TableAdd());
             GetData();
         }
 
@@ -47,7 +48,7 @@ namespace SliceOfHeaven.View
             GetData();
         }
 
-        private void form_CategoryView_Load(object sender, EventArgs e)
+        private void form_TableView_Load(object sender, EventArgs e)
         {
             GetData();
         }
@@ -68,8 +69,8 @@ namespace SliceOfHeaven.View
                     {
                         // Perform the delete operation
                         int id = Convert.ToInt32(dgv_CategoryView.CurrentRow.Cells["dgvid"].Value);
-                        string qry = "DELETE FROM category WHERE catID = " + id;
-                        Hashtable ht = new Hashtable();
+                        string qry = "DELETE FROM tables WHERE tid = " + id;
+                        
                         MainClass.SQL(qry, ht);
 
                         MessageBox.Show("Deleted Successfully");
@@ -81,17 +82,26 @@ namespace SliceOfHeaven.View
                 else if (dgv_CategoryView.CurrentCell.OwningColumn.Name == "dgvedit")
                 {
                     // Open the edit form
-                    form_CategoryAdd add = new form_CategoryAdd();
+                    form_TableAdd add = new form_TableAdd();
                     add.id = Convert.ToInt32(dgv_CategoryView.CurrentRow.Cells["dgvid"].Value);
                     add.txtbox_name.Text = Convert.ToString(dgv_CategoryView.CurrentRow.Cells["dgvname"].Value);
                     //add.ShowDialog();
-                    MainClass.BlurBackground(new form_CategoryAdd());
+                    MainClass.BlurBackground(new form_TableAdd());
 
                     // Refresh the data in the DataGridView after editing
                     GetData();
-                    
                 }
             }
+        }
+
+        private void dgv_CategoryView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void form_TableView_Load_1(object sender, EventArgs e)
+        {
+            GetData();
         }
     }
 }
