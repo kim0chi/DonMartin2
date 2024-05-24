@@ -129,6 +129,12 @@
     <Compile Include="Model\form_CategoryAdd.Designer.cs">
       <DependentUpon>form_CategoryAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\form_POS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\form_POS.Designer.cs">
+      <DependentUpon>form_POS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\form_ProductAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Model\form_CategoryAdd.resx">
       <DependentUpon>form_CategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\form_POS.resx">
+      <DependentUpon>form_POS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\form_ProductAdd.resx">
       <DependentUpon>form_ProductAdd.cs</DependentUpon>
@@ -289,6 +298,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-bag-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuPic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-power-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-shopping-basket-add-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
