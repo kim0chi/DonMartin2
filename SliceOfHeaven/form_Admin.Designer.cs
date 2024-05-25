@@ -236,9 +236,10 @@
             this.btn_customize.Name = "btn_customize";
             this.btn_customize.Size = new System.Drawing.Size(190, 45);
             this.btn_customize.TabIndex = 7;
-            this.btn_customize.Text = "          Kitchen";
+            this.btn_customize.Text = "          POS";
             this.btn_customize.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_customize.UseVisualStyleBackColor = true;
+            this.btn_customize.Click += new System.EventHandler(this.btn_customize_Click);
             // 
             // btn_products
             // 

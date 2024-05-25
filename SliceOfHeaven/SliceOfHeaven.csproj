@@ -153,6 +153,12 @@
     <Compile Include="Model\form_TableAdd.Designer.cs">
       <DependentUpon>form_TableAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ucProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Model\ucProduct.Designer.cs">
+      <DependentUpon>ucProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\form_CategoryView.cs">
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Model\form_TableAdd.resx">
       <DependentUpon>form_TableAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\ucProduct.resx">
+      <DependentUpon>ucProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -307,6 +316,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-shopping-basket-add-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pizza-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

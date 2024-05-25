@@ -1,4 +1,5 @@
 ﻿
+using SliceOfHeaven.Model;
 using SliceOfHeaven.View;
 using System;
 using System.Collections.Generic;
@@ -90,6 +91,16 @@ namespace SliceOfHeaven
         private void btn_products_Click(object sender, EventArgs e)
         {
             AddControls(new form_ProductView());
+        }
+
+        form_POS pos = new form_POS();
+
+        private void btn_customize_Click(object sender, EventArgs e)
+        {
+            form_POS.PreviousForm = this;
+            form_POS pos = new form_POS();
+            pos.Show();
+            this.Hide();
         }
     }
 }

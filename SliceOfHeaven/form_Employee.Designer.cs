@@ -36,14 +36,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Logout = new ReaLTaiizor.Controls.CyberButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel_CenterScreen = new System.Windows.Forms.Panel();
             this.btn_account = new System.Windows.Forms.Button();
             this.btn_share = new System.Windows.Forms.Button();
             this.btn_customize = new System.Windows.Forms.Button();
             this.btn_products = new System.Windows.Forms.Button();
             this.btn_home = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel_CenterScreen = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -172,22 +172,6 @@
             this.btn_Logout.Timer_RGB = 300;
             this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.panel_Center);
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(230, 128);
-            this.panel3.TabIndex = 5;
-            // 
-            // panel_CenterScreen
-            // 
-            this.panel_CenterScreen.Location = new System.Drawing.Point(230, 44);
-            this.panel_CenterScreen.Name = "panel_CenterScreen";
-            this.panel_CenterScreen.Size = new System.Drawing.Size(954, 746);
-            this.panel_CenterScreen.TabIndex = 7;
-            // 
             // btn_account
             // 
             this.btn_account.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -238,9 +222,10 @@
             this.btn_customize.Name = "btn_customize";
             this.btn_customize.Size = new System.Drawing.Size(190, 45);
             this.btn_customize.TabIndex = 7;
-            this.btn_customize.Text = "          Customize!";
+            this.btn_customize.Text = "          POS";
             this.btn_customize.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_customize.UseVisualStyleBackColor = true;
+            this.btn_customize.Click += new System.EventHandler(this.btn_customize_Click);
             // 
             // btn_products
             // 
@@ -279,6 +264,15 @@
             this.btn_home.UseVisualStyleBackColor = true;
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click_1);
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel_Center);
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(230, 128);
+            this.panel3.TabIndex = 5;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -288,6 +282,13 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            // 
+            // panel_CenterScreen
+            // 
+            this.panel_CenterScreen.Location = new System.Drawing.Point(230, 44);
+            this.panel_CenterScreen.Name = "panel_CenterScreen";
+            this.panel_CenterScreen.Size = new System.Drawing.Size(954, 746);
+            this.panel_CenterScreen.TabIndex = 7;
             // 
             // form_Employee
             // 
