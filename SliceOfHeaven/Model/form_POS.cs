@@ -295,8 +295,6 @@ namespace SliceOfHeaven.Model
                         WHERE MainID = @ID";
             }
 
-            Hashtable ht = new Hashtable();
-
             SqlCommand cmd = new SqlCommand(qry1, MainClass.con);
             cmd.Parameters.AddWithValue("@ID", MainID);
             cmd.Parameters.AddWithValue("@aDate", Convert.ToDateTime(DateTime.Now.Date));
@@ -368,7 +366,6 @@ namespace SliceOfHeaven.Model
                 MessageBox.Show("Saved Successfully");
                 MainID = 0;
                 detailID = 0;
-                dgv_CategoryView.Rows.Clear();
                 lbl_Table.Text = "";
                 lbl_Waiter.Text = "";
                 lbl_Table.Visible = false;
