@@ -120,6 +120,9 @@
   <metadata name="dgvSno.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="dgvproID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="dgvid.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -139,7 +142,7 @@
   <data name="label4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAABJJJREFUaEPtWF1oFFcUzlstVd8K7avVoj4UfGu1+FN8UKsvQtSCiLZWqbLQxJm5
+        DgAACw4BQL7hQQAABJJJREFUaEPtWF1oFFcUzlstVd8K7avVoj4UfGu1+FN8UKsvQtSCiLZWqbLQxJm5
         d9OaNQg1JmpMqMm6MT7YPy0Uf7C0tODPSxURiWapSkFqQitp0UKzG7Obhdvv3L13MjM7huzsTUxhP/jI
         ZObO+c65c+6952xNFVVUEQ2xRGK2zfl7lsO7bYfdsBz2l814niivcc9mLLXHcTbZtj1Lvfb8Uc/563C6
         B05m4ayYCItj2QkEMk+ZmXrU1dW9CMcPwZnRMCcnSHwd3pJIJGYos1MDmjmkRF/QoeZGW5w7FBN9yZ3i

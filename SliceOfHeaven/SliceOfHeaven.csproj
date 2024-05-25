@@ -153,6 +153,18 @@
     <Compile Include="Model\form_TableAdd.Designer.cs">
       <DependentUpon>form_TableAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\form_TableSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\form_TableSelect.Designer.cs">
+      <DependentUpon>form_TableSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\form_WaiterSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\form_WaiterSelect.Designer.cs">
+      <DependentUpon>form_WaiterSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\ucProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -232,6 +244,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Model\form_TableAdd.resx">
       <DependentUpon>form_TableAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\form_TableSelect.resx">
+      <DependentUpon>form_TableSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\form_WaiterSelect.resx">
+      <DependentUpon>form_WaiterSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\ucProduct.resx">
       <DependentUpon>ucProduct.cs</DependentUpon>
