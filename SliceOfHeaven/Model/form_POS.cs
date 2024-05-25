@@ -24,14 +24,14 @@ namespace SliceOfHeaven.Model
         }
 
         public int MainID = 0;
-        public string OrderType;
+        public string OrderType = "";
 
-        private void form_POS_FormClosing(object sender, FormClosingEventArgs e)
+        private void form_POS_FormClosing(object sender, FormClosingEventArgs e) // Useless
         {
            
         }
 
-        private void dgv_CategoryView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_CategoryView_CellContentClick(object sender, DataGridViewCellEventArgs e) // Useless
         {
 
         }
@@ -276,8 +276,8 @@ namespace SliceOfHeaven.Model
         {
             // Save the Data in Database
             // Create Table
-            string qry1 = "";
-            string qry2 = "";
+            string qry1 = ""; // Main Table
+            string qry2 = ""; // Detail Table
 
             int detailID = 0;
             
@@ -303,7 +303,7 @@ namespace SliceOfHeaven.Model
             cmd.Parameters.AddWithValue("@WaiterName", lbl_Waiter.Text);
             cmd.Parameters.AddWithValue("@status", "Pending");
             cmd.Parameters.AddWithValue("@orderType", OrderType);
-            cmd.Parameters.AddWithValue("@total", Convert.ToDouble(0)); // Saving Data For Kitchen Value and will Update When Payment is Received
+            cmd.Parameters.AddWithValue("@total", Convert.ToDouble(lbl_Total.Text)); // Saving Data For Kitchen Value and will Update When Payment is Received
             cmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
             cmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
 
@@ -324,55 +324,64 @@ namespace SliceOfHeaven.Model
                 MainClass.con.Close();
             }
 
+            // Create a dictionary to store the existing DetailIDs for the current MainID
+            Dictionary<int, int> existingDetails = new Dictionary<int, int>();
+
+            // Check if there are any existing details for the current MainID
+            string checkQuery = "SELECT DetailID, proID FROM tableDetails WHERE MainID = @MainID";
+            SqlCommand checkCmd = new SqlCommand(checkQuery, MainClass.con);
+            checkCmd.Parameters.AddWithValue("@MainID", MainID);
+
+            if (MainClass.con.State == ConnectionState.Closed)
+                MainClass.con.Open();
+
+            SqlDataReader reader = checkCmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int localDetailID = reader.GetInt32(0);
+                int proID = reader.GetInt32(1);
+                existingDetails[proID] = localDetailID;
+            }
+
+            reader.Close();
+
+            if (MainClass.con.State == ConnectionState.Open)
+                MainClass.con.Close();
+
+            
             foreach (DataGridViewRow row in dgv_CategoryView.Rows)
             {
-                detailID = Convert.ToInt32(row.Cells["dgvid"].Value);
+                int proID = Convert.ToInt32(row.Cells["dgvproID"].Value);
+                int localDetailID;
 
-                if (detailID == 0) // INSERT
+                if (existingDetails.TryGetValue(proID, out localDetailID)) // If the product exists, update
+                {
+                    qry2 = @"UPDATE tableDetails SET qty = @qty, price = @price, amount = @amount 
+                WHERE DetailID = @ID";
+                }
+                else // If the product doesn't exist, insert
                 {
                     qry2 = @"INSERT INTO tableDetails VALUES (@MainID, @proID, @qty, @price, @amount)";
+                    localDetailID = 0; // Set localDetailID to 0 for new rows
                 }
-                else // UPDATE
-                {
-                    qry2 = @"UPDATE tableDetails SET proID = @proID, qty = @qty, price = @price, amount = @amount 
-                    WHERE DetailID = @ID";
-                }
-
+                
                 SqlCommand cmd2 = new SqlCommand(qry2, MainClass.con);
-                cmd2.Parameters.AddWithValue("@ID", detailID);
-                cmd2.Parameters.AddWithValue("MainID", MainID);
-                cmd2.Parameters.AddWithValue("@proID", Convert.ToInt32(row.Cells["dgvproID"].Value));
+                cmd2.Parameters.AddWithValue("@ID", localDetailID);
+                cmd2.Parameters.AddWithValue("@MainID", MainID);
+                cmd2.Parameters.AddWithValue("@proID", proID);
                 cmd2.Parameters.AddWithValue("@qty", Convert.ToInt32(row.Cells["dgvQty"].Value));
                 cmd2.Parameters.AddWithValue("@price", Convert.ToDouble(row.Cells["dgvPrice"].Value));
                 cmd2.Parameters.AddWithValue("@amount", Convert.ToDouble(row.Cells["dgvAmount"].Value));
 
-                if (MainClass.con.State == ConnectionState.Closed)
-                {
-                    MainClass.con.Open();
-                }
-                if (MainID == 0)
-                {
-                    MainID = Convert.ToInt32(cmd2.ExecuteScalar());
-                }
-                else
-                {
-                    cmd2.ExecuteNonQuery();
-                }
-                if (MainClass.con.State == ConnectionState.Open)
-                {
-                    MainClass.con.Close();
-                }
 
-                MessageBox.Show("Saved Successfully");
-                MainID = 0;
-                detailID = 0;
-                lbl_Table.Text = "";
-                lbl_Waiter.Text = "";
-                lbl_Table.Visible = false;
-                lbl_Waiter.Visible = false;
-                lbl_Total.Text = "00";
+                if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
+                cmd2.ExecuteNonQuery();
+                
+                if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
+                
             }
-
+            MessageBox.Show("Successfully Saved");
         }
     }
 }

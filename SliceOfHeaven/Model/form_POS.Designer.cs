@@ -34,28 +34,28 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_POS));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lbl_Waiter = new System.Windows.Forms.Label();
             this.lbl_Table = new System.Windows.Forms.Label();
             this.btn_Delivery = new ReaLTaiizor.Controls.CyberButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_DineIn = new ReaLTaiizor.Controls.CyberButton();
             this.btn_TakeOut = new ReaLTaiizor.Controls.CyberButton();
             this.btn_Kitchen = new ReaLTaiizor.Controls.CyberButton();
             this.btn_Bill = new ReaLTaiizor.Controls.CyberButton();
             this.btn_Hold = new ReaLTaiizor.Controls.CyberButton();
+            this.btn_New = new ReaLTaiizor.Controls.CyberButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgv_CategoryView = new System.Windows.Forms.DataGridView();
             this.panel_Category = new System.Windows.Forms.FlowLayoutPanel();
             this.panel_Product = new System.Windows.Forms.FlowLayoutPanel();
             this.txtbox_Search = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.lbl_Total = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btn_New = new ReaLTaiizor.Controls.CyberButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.dgvSno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvproID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,10 +64,10 @@
             this.dgvPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_CategoryView)).BeginInit();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_CategoryView)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -92,6 +92,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1294, 136);
             this.panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(991, 73);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 21);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Waiter:";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(991, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 21);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Table:";
             // 
             // lbl_Waiter
             // 
@@ -154,6 +176,18 @@
             this.btn_Delivery.Timer_Effect_1 = 5;
             this.btn_Delivery.Timer_RGB = 300;
             this.btn_Delivery.Click += new System.EventHandler(this.btn_Delivery_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::SliceOfHeaven.Properties.Resources.icons8_power_96;
+            this.pictureBox2.Location = new System.Drawing.Point(1214, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(80, 63);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // btn_DineIn
             // 
@@ -363,6 +397,50 @@
             this.btn_Hold.Timer_Effect_1 = 5;
             this.btn_Hold.Timer_RGB = 300;
             // 
+            // btn_New
+            // 
+            this.btn_New.Alpha = 20;
+            this.btn_New.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_New.BackColor = System.Drawing.Color.Transparent;
+            this.btn_New.Background = true;
+            this.btn_New.Background_WidthPen = 4F;
+            this.btn_New.BackgroundImage = global::SliceOfHeaven.Properties.Resources.icons8_shopping_basket_add_48;
+            this.btn_New.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_New.BackgroundPen = true;
+            this.btn_New.ColorBackground = System.Drawing.Color.Maroon;
+            this.btn_New.ColorBackground_1 = System.Drawing.Color.Transparent;
+            this.btn_New.ColorBackground_2 = System.Drawing.Color.Maroon;
+            this.btn_New.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(47)))), ((int)(((byte)(39)))));
+            this.btn_New.ColorLighting = System.Drawing.Color.LightCoral;
+            this.btn_New.ColorPen_1 = System.Drawing.Color.Maroon;
+            this.btn_New.ColorPen_2 = System.Drawing.Color.Maroon;
+            this.btn_New.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.btn_New.Effect_1 = true;
+            this.btn_New.Effect_1_ColorBackground = System.Drawing.Color.LightCoral;
+            this.btn_New.Effect_1_Transparency = 25;
+            this.btn_New.Effect_2 = true;
+            this.btn_New.Effect_2_ColorBackground = System.Drawing.Color.Maroon;
+            this.btn_New.Effect_2_Transparency = 20;
+            this.btn_New.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_New.ForeColor = System.Drawing.Color.White;
+            this.btn_New.Lighting = false;
+            this.btn_New.LinearGradient_Background = false;
+            this.btn_New.LinearGradientPen = false;
+            this.btn_New.Location = new System.Drawing.Point(237, 24);
+            this.btn_New.Name = "btn_New";
+            this.btn_New.PenWidth = 15;
+            this.btn_New.Rounding = true;
+            this.btn_New.RoundingInt = 70;
+            this.btn_New.Size = new System.Drawing.Size(101, 84);
+            this.btn_New.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.btn_New.TabIndex = 2;
+            this.btn_New.Tag = "Cyber";
+            this.btn_New.TextButton = "New";
+            this.btn_New.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btn_New.Timer_Effect_1 = 5;
+            this.btn_New.Timer_RGB = 300;
+            this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -371,6 +449,16 @@
             this.label1.Size = new System.Drawing.Size(106, 21);
             this.label1.TabIndex = 3;
             this.label1.Text = "Point of Sale";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SliceOfHeaven.Properties.Resources.MenuPic;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(129, 111);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // dgv_CategoryView
             // 
@@ -466,17 +554,6 @@
             this.panel2.Size = new System.Drawing.Size(1294, 100);
             this.panel2.TabIndex = 12;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(1070, 38);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 25);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Total:";
-            // 
             // lbl_Total
             // 
             this.lbl_Total.AutoSize = true;
@@ -487,6 +564,17 @@
             this.lbl_Total.Size = new System.Drawing.Size(50, 25);
             this.lbl_Total.TabIndex = 5;
             this.lbl_Total.Text = "0.00";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Location = new System.Drawing.Point(1070, 38);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 25);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Total:";
             // 
             // label4
             // 
@@ -500,94 +588,6 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "        |";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::SliceOfHeaven.Properties.Resources.icons8_power_96;
-            this.pictureBox2.Location = new System.Drawing.Point(1214, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(80, 63);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // btn_New
-            // 
-            this.btn_New.Alpha = 20;
-            this.btn_New.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_New.BackColor = System.Drawing.Color.Transparent;
-            this.btn_New.Background = true;
-            this.btn_New.Background_WidthPen = 4F;
-            this.btn_New.BackgroundImage = global::SliceOfHeaven.Properties.Resources.icons8_shopping_basket_add_48;
-            this.btn_New.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_New.BackgroundPen = true;
-            this.btn_New.ColorBackground = System.Drawing.Color.Maroon;
-            this.btn_New.ColorBackground_1 = System.Drawing.Color.Transparent;
-            this.btn_New.ColorBackground_2 = System.Drawing.Color.Maroon;
-            this.btn_New.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(47)))), ((int)(((byte)(39)))));
-            this.btn_New.ColorLighting = System.Drawing.Color.LightCoral;
-            this.btn_New.ColorPen_1 = System.Drawing.Color.Maroon;
-            this.btn_New.ColorPen_2 = System.Drawing.Color.Maroon;
-            this.btn_New.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.btn_New.Effect_1 = true;
-            this.btn_New.Effect_1_ColorBackground = System.Drawing.Color.LightCoral;
-            this.btn_New.Effect_1_Transparency = 25;
-            this.btn_New.Effect_2 = true;
-            this.btn_New.Effect_2_ColorBackground = System.Drawing.Color.Maroon;
-            this.btn_New.Effect_2_Transparency = 20;
-            this.btn_New.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_New.ForeColor = System.Drawing.Color.White;
-            this.btn_New.Lighting = false;
-            this.btn_New.LinearGradient_Background = false;
-            this.btn_New.LinearGradientPen = false;
-            this.btn_New.Location = new System.Drawing.Point(237, 24);
-            this.btn_New.Name = "btn_New";
-            this.btn_New.PenWidth = 15;
-            this.btn_New.Rounding = true;
-            this.btn_New.RoundingInt = 70;
-            this.btn_New.Size = new System.Drawing.Size(101, 84);
-            this.btn_New.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.btn_New.TabIndex = 2;
-            this.btn_New.Tag = "Cyber";
-            this.btn_New.TextButton = "New";
-            this.btn_New.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.btn_New.Timer_Effect_1 = 5;
-            this.btn_New.Timer_RGB = 300;
-            this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SliceOfHeaven.Properties.Resources.MenuPic;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(129, 111);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(991, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 21);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Table:";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(991, 73);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 21);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Waiter:";
-            // 
             // dgvSno
             // 
             this.dgvSno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -600,6 +600,7 @@
             // 
             // dgvproID
             // 
+            this.dgvproID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgvproID.HeaderText = "ProductID";
             this.dgvproID.Name = "dgvproID";
             this.dgvproID.ReadOnly = true;
@@ -675,11 +676,11 @@
             this.Load += new System.EventHandler(this.form_POS_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CategoryView)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
