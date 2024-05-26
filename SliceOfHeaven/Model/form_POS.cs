@@ -114,14 +114,9 @@ namespace SliceOfHeaven.Model
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AddItems(string id, string proID, string name, string cat, string price, Image pImage)
         {
-
-        }
-
-        private void AddItems(string id, String proID, string name, string cat, string price, Image pImage)
-        {
-            var w = new ucProduct()
+            var w = new ucProduct
             { 
                 PName = name,
                 PPrice = price,
@@ -159,7 +154,6 @@ namespace SliceOfHeaven.Model
             };
         }
 
-        // Getting Product From DataBase
         private void LoadProducts()
         {
             string qry = "SELECT * FROM products INNER JOIN category ON catID = CategoryID";
@@ -189,7 +183,6 @@ namespace SliceOfHeaven.Model
         private void dgv_CategoryView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // For Serial Number
-
             int count = 0;
 
             foreach (DataGridViewRow row in dgv_CategoryView.Rows)
@@ -349,7 +342,6 @@ namespace SliceOfHeaven.Model
             if (MainClass.con.State == ConnectionState.Open)
                 MainClass.con.Close();
 
-            
             foreach (DataGridViewRow row in dgv_CategoryView.Rows)
             {
                 int proID = Convert.ToInt32(row.Cells["dgvproID"].Value);
@@ -374,12 +366,10 @@ namespace SliceOfHeaven.Model
                 cmd2.Parameters.AddWithValue("@price", Convert.ToDouble(row.Cells["dgvPrice"].Value));
                 cmd2.Parameters.AddWithValue("@amount", Convert.ToDouble(row.Cells["dgvAmount"].Value));
 
-
                 if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
                 cmd2.ExecuteNonQuery();
                 
                 if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
-                
             }
             MessageBox.Show("Successfully Saved");
         }
