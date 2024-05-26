@@ -57,8 +57,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvSno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvproID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvproID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -146,7 +146,7 @@
             this.btn_Delivery.ColorBackground = System.Drawing.Color.Maroon;
             this.btn_Delivery.ColorBackground_1 = System.Drawing.Color.Transparent;
             this.btn_Delivery.ColorBackground_2 = System.Drawing.Color.Maroon;
-            this.btn_Delivery.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(47)))), ((int)(((byte)(39)))));
+            this.btn_Delivery.ColorBackground_Pen = System.Drawing.Color.Maroon;
             this.btn_Delivery.ColorLighting = System.Drawing.Color.LightCoral;
             this.btn_Delivery.ColorPen_1 = System.Drawing.Color.Maroon;
             this.btn_Delivery.ColorPen_2 = System.Drawing.Color.Maroon;
@@ -200,7 +200,7 @@
             this.btn_DineIn.ColorBackground = System.Drawing.Color.Maroon;
             this.btn_DineIn.ColorBackground_1 = System.Drawing.Color.Transparent;
             this.btn_DineIn.ColorBackground_2 = System.Drawing.Color.Maroon;
-            this.btn_DineIn.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(47)))), ((int)(((byte)(39)))));
+            this.btn_DineIn.ColorBackground_Pen = System.Drawing.Color.Maroon;
             this.btn_DineIn.ColorLighting = System.Drawing.Color.LightCoral;
             this.btn_DineIn.ColorPen_1 = System.Drawing.Color.Maroon;
             this.btn_DineIn.ColorPen_2 = System.Drawing.Color.Maroon;
@@ -242,7 +242,7 @@
             this.btn_TakeOut.ColorBackground = System.Drawing.Color.Maroon;
             this.btn_TakeOut.ColorBackground_1 = System.Drawing.Color.Transparent;
             this.btn_TakeOut.ColorBackground_2 = System.Drawing.Color.Maroon;
-            this.btn_TakeOut.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(47)))), ((int)(((byte)(39)))));
+            this.btn_TakeOut.ColorBackground_Pen = System.Drawing.Color.Maroon;
             this.btn_TakeOut.ColorLighting = System.Drawing.Color.LightCoral;
             this.btn_TakeOut.ColorPen_1 = System.Drawing.Color.Maroon;
             this.btn_TakeOut.ColorPen_2 = System.Drawing.Color.Maroon;
@@ -284,7 +284,7 @@
             this.btn_Kitchen.ColorBackground = System.Drawing.Color.Maroon;
             this.btn_Kitchen.ColorBackground_1 = System.Drawing.Color.Transparent;
             this.btn_Kitchen.ColorBackground_2 = System.Drawing.Color.Maroon;
-            this.btn_Kitchen.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(47)))), ((int)(((byte)(39)))));
+            this.btn_Kitchen.ColorBackground_Pen = System.Drawing.Color.Maroon;
             this.btn_Kitchen.ColorLighting = System.Drawing.Color.LightCoral;
             this.btn_Kitchen.ColorPen_1 = System.Drawing.Color.Maroon;
             this.btn_Kitchen.ColorPen_2 = System.Drawing.Color.Maroon;
@@ -326,7 +326,7 @@
             this.btn_Bill.ColorBackground = System.Drawing.Color.Maroon;
             this.btn_Bill.ColorBackground_1 = System.Drawing.Color.Transparent;
             this.btn_Bill.ColorBackground_2 = System.Drawing.Color.Maroon;
-            this.btn_Bill.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(47)))), ((int)(((byte)(39)))));
+            this.btn_Bill.ColorBackground_Pen = System.Drawing.Color.Maroon;
             this.btn_Bill.ColorLighting = System.Drawing.Color.LightCoral;
             this.btn_Bill.ColorPen_1 = System.Drawing.Color.Maroon;
             this.btn_Bill.ColorPen_2 = System.Drawing.Color.Maroon;
@@ -367,7 +367,7 @@
             this.btn_Hold.ColorBackground = System.Drawing.Color.Maroon;
             this.btn_Hold.ColorBackground_1 = System.Drawing.Color.Transparent;
             this.btn_Hold.ColorBackground_2 = System.Drawing.Color.Maroon;
-            this.btn_Hold.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(47)))), ((int)(((byte)(39)))));
+            this.btn_Hold.ColorBackground_Pen = System.Drawing.Color.Maroon;
             this.btn_Hold.ColorLighting = System.Drawing.Color.LightCoral;
             this.btn_Hold.ColorPen_1 = System.Drawing.Color.Maroon;
             this.btn_Hold.ColorPen_2 = System.Drawing.Color.Maroon;
@@ -410,7 +410,7 @@
             this.btn_New.ColorBackground = System.Drawing.Color.Maroon;
             this.btn_New.ColorBackground_1 = System.Drawing.Color.Transparent;
             this.btn_New.ColorBackground_2 = System.Drawing.Color.Maroon;
-            this.btn_New.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(47)))), ((int)(((byte)(39)))));
+            this.btn_New.ColorBackground_Pen = System.Drawing.Color.Maroon;
             this.btn_New.ColorLighting = System.Drawing.Color.LightCoral;
             this.btn_New.ColorPen_1 = System.Drawing.Color.Maroon;
             this.btn_New.ColorPen_2 = System.Drawing.Color.Maroon;
@@ -486,8 +486,8 @@
             this.dgv_CategoryView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_CategoryView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvSno,
-            this.dgvproID,
             this.dgvid,
+            this.dgvproID,
             this.dgvname,
             this.dgvQty,
             this.dgvPrice,
@@ -564,6 +564,7 @@
             this.lbl_Total.Size = new System.Drawing.Size(50, 25);
             this.lbl_Total.TabIndex = 5;
             this.lbl_Total.Text = "0.00";
+            this.lbl_Total.Click += new System.EventHandler(this.lbl_Total_Click);
             // 
             // label5
             // 
@@ -598,14 +599,6 @@
             this.dgvSno.ReadOnly = true;
             this.dgvSno.Width = 40;
             // 
-            // dgvproID
-            // 
-            this.dgvproID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvproID.HeaderText = "ProductID";
-            this.dgvproID.Name = "dgvproID";
-            this.dgvproID.ReadOnly = true;
-            this.dgvproID.Visible = false;
-            // 
             // dgvid
             // 
             this.dgvid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -615,6 +608,16 @@
             this.dgvid.ReadOnly = true;
             this.dgvid.Visible = false;
             this.dgvid.Width = 5;
+            // 
+            // dgvproID
+            // 
+            this.dgvproID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvproID.FillWeight = 50F;
+            this.dgvproID.HeaderText = "ProductID";
+            this.dgvproID.MinimumWidth = 50;
+            this.dgvproID.Name = "dgvproID";
+            this.dgvproID.ReadOnly = true;
+            this.dgvproID.Width = 50;
             // 
             // dgvname
             // 
@@ -712,8 +715,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvproID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvproID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvname;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrice;

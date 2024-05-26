@@ -121,7 +121,7 @@ namespace SliceOfHeaven.Model
             // Handle button click if needed
         }
 
-        private void AddItems(string id, int proID, string name, string cat, string price, Image pImage)
+        private void AddItems(string id, String proID, string name, string cat, string price, Image pImage)
         {
             var w = new ucProduct
             {
@@ -129,7 +129,7 @@ namespace SliceOfHeaven.Model
                 PPrice = price,
                 PCategory = cat,
                 PImage = pImage,
-                id = proID
+                id = Convert.ToInt32(proID)
             };
 
             panel_Product.Controls.Add(w);
@@ -173,7 +173,7 @@ namespace SliceOfHeaven.Model
             foreach (DataRow item in dt.Rows)
             {
                 byte[] imageArray = (byte[])item["pImage"];
-                AddItems("0", (int)item["pID"], item["pName"].ToString(), item["catName"].ToString(), item["pPrice"].ToString(), Image.FromStream(new MemoryStream(imageArray)));
+                AddItems("0", item["pID"].ToString(), item["pName"].ToString(), item["catName"].ToString(), item["pPrice"].ToString(), Image.FromStream(new MemoryStream(imageArray)));
             }
         }
 
@@ -286,6 +286,7 @@ namespace SliceOfHeaven.Model
                         (@aDate, @aTime, @TableName, @WaiterName, @status, @orderType,
 	                    @total, @received, @change);
                         SELECT SCOPE_IDENTITY()";
+
                 // Get recent add ID value
             }
             else // Update
@@ -378,6 +379,11 @@ namespace SliceOfHeaven.Model
                 if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
             }
             MessageBox.Show("Successfully Saved");
+        }
+
+        private void lbl_Total_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

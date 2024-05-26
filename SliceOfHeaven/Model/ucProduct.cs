@@ -20,7 +20,11 @@ namespace SliceOfHeaven.Model
         public event EventHandler onSelect = null;
         public int id { get; set; }
 
-        public string PPrice { get; set; }
+        public string PPrice
+        {
+            get { return lbl_Price.Text; }
+            set { lbl_Price.Text = $"{value}"; }
+        }
 
         public string PCategory { get; set; }
 

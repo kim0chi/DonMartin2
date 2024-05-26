@@ -16,8 +16,8 @@ namespace SliceOfHeaven
 {
     class MainClass
     {
-        //public static readonly string conString = @"Data Source=DESKTOP-K6LHVL9\SQLEXPRESS;Initial Catalog=DonMartinDB;Integrated Security=True;";
-        public static readonly string conString = @"Data Source=DESKTOP-9C9HRD8\SQLEXPRESS;Initial Catalog=DonMartinDB;Integrated Security=True;";
+        public static readonly string conString = @"Data Source=DESKTOP-K6LHVL9\SQLEXPRESS;Initial Catalog=DonMartinDB;Integrated Security=True;";
+        //public static readonly string conString = @"Data Source=DESKTOP-9C9HRD8\SQLEXPRESS;Initial Catalog=DonMartinDB;Integrated Security=True;";
 
 
         public static SqlConnection con = new SqlConnection(conString);
