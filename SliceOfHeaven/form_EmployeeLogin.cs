@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SliceOfHeaven
 {
@@ -29,18 +30,49 @@ namespace SliceOfHeaven
             txtbox_Password.PasswordChar = checkBox1.Checked ? '\0' : '*';
         }
 
-        private void cyberButton3_Click(object sender, EventArgs e)
+        MainClass main = new MainClass();
+        public static class Session
         {
-            if (MainClass.IsValidStaff(txtbox_Username.Text, txtbox_Password.Text) == false)
+            public static string LoggedInUsername { get; set; }
+        }
+
+        public bool Login(string username, string password)
+        {
+            DataRow userDetails;
+            if (main.IsValidStaff(username, password, out userDetails))
             {
-                MessageBox.Show("Invalid Username or Password!");
-                return;
+                Session.LoggedInUsername = username;
+                return true;
             }
             else
             {
+                return false;
+            }
+        }
+
+
+        private void cyberButton3_Click(object sender, EventArgs e)
+        {
+            string user = txtbox_Username.Text;
+            string pass = txtbox_Password.Text;
+
+            Session.LoggedInUsername = user;
+
+            if (main.IsValidStaff(user, pass, out DataRow userDetails))
+            {
+                MessageBox.Show("Login successful!");
+
+                string staffID = userDetails["staffID"].ToString();
+                string sName = userDetails["sName"].ToString();
+                
+
                 this.Hide();
                 form_Employee staff = new form_Employee();
                 staff.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password.");
             }
         }
     }

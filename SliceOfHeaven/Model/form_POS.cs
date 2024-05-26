@@ -23,8 +23,13 @@ namespace SliceOfHeaven.Model
             InitializeComponent();
         }
 
+        public int DETAILID = 0;
         public int MainID = 0;
         public string OrderType = "";
+        public int driverID = 0;
+        public string custNamePOS = "";
+        public string custPhonePOS = "";
+        public string DriverPOS = "";
 
         private void form_POS_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -223,32 +228,75 @@ namespace SliceOfHeaven.Model
             dgv_CategoryView.Rows.Clear();
             MainID = 0;
             lbl_Total.Text = "00";
+            lbl_OrderType.Text = "";
         }
 
         private void btn_Delivery_Click(object sender, EventArgs e)
         {
-            lbl_Table.Text = "";
-            lbl_Waiter.Text = "";
+            form_CustomerAdd add = new form_CustomerAdd();
+            driverID = add.driverID;
+            custNamePOS = add.custName;
+            custPhonePOS = add.custPhone;
+            DriverPOS = add.Driver;
+            lbl_Table.Text = custNamePOS;
+            lbl_Waiter.Text = custPhonePOS;
             lbl_Table.Visible = false;
             lbl_Waiter.Visible = false;
             OrderType = "Delivery";
+            lbl_OrderType.Text = OrderType;
+            add.orderType = OrderType;
+
+
+            MainClass.BlurBackgroundPOS(this, add);
+            if (OrderType == "Delivery")
+            {
+                driverID = add.driverID;
+                custNamePOS = add.custName;
+                custPhonePOS = add.custPhone;
+                DriverPOS = add.Driver;
+                lbl_DriverName.Visible = true;
+                lbl_DriverName.Text = $"Customer Name: {custNamePOS}      Phone: {custPhonePOS}     Driver: {DriverPOS}";
+            }
         }
 
         private void btn_TakeOut_Click(object sender, EventArgs e)
         {
-            lbl_Table.Text = "";
-            lbl_Waiter.Text = "";
+            form_CustomerAdd add = new form_CustomerAdd();
+            driverID = add.driverID;
+            custNamePOS = add.custName;
+            custPhonePOS = add.custPhone;
+            DriverPOS = add.Driver;
+            lbl_Table.Text = custNamePOS;
+            lbl_Waiter.Text = custPhonePOS;
             lbl_Table.Visible = false;
             lbl_Waiter.Visible = false;
             OrderType = "Take Out";
+            lbl_OrderType.Text = OrderType;
+            add.orderType = OrderType;
+
+            
+            add.MainID = MainID;
+            MainClass.BlurBackgroundPOS(this, add);
+
+            if (OrderType == "Take Out")
+            {
+                driverID = add.driverID;
+                lbl_DriverName.Visible = true;
+                custNamePOS = add.custName;
+                custPhonePOS = add.custPhone;
+                DriverPOS = add.Driver;
+                lbl_DriverName.Text = $"Customer Name: {custNamePOS}      Phone: {custPhonePOS}";
+            }
         }
 
         private void btn_DineIn_Click(object sender, EventArgs e)
         {
             // Create form for table selection and waiter selection
             OrderType = "Dine In";
+            lbl_OrderType.Text = OrderType;
+            lbl_DriverName.Visible = false;
             form_TableSelect table = new form_TableSelect();
-            MainClass.BlurBackground(table);
+            MainClass.BlurBackgroundPOS(this, table);
 
             if (table.TableName != "")
             {
@@ -260,7 +308,7 @@ namespace SliceOfHeaven.Model
             }
 
             form_WaiterSelect waiter = new form_WaiterSelect();
-            MainClass.BlurBackground(waiter);
+            MainClass.BlurBackgroundPOS(this, waiter);
             if (waiter.waiterName != "")
             {
                 lbl_Waiter.Text = waiter.waiterName;
@@ -271,6 +319,8 @@ namespace SliceOfHeaven.Model
             }
         }
 
+        public string detailID;
+
         private void btn_Kitchen_Click(object sender, EventArgs e)
         {
             // Save the data in the database
@@ -278,13 +328,13 @@ namespace SliceOfHeaven.Model
             string qry1 = ""; // Main table
             string qry2 = ""; // Detail table
 
-            int detailID = 0;
+            detailID = "0";
 
             if (MainID == 0) // Insert
             {
                 qry1 = @"INSERT INTO tableMain VALUES 
                         (@aDate, @aTime, @TableName, @WaiterName, @status, @orderType,
-	                    @total, @received, @change);
+	                    @total, @received, @change, @driverID, @CustName, @CustPhone);
                         SELECT SCOPE_IDENTITY()";
 
                 // Get recent add ID value
@@ -306,6 +356,9 @@ namespace SliceOfHeaven.Model
             cmd.Parameters.AddWithValue("@total", Convert.ToDouble(lbl_Total.Text)); // Saving data for kitchen value and will update when payment is received
             cmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
             cmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
+            cmd.Parameters.AddWithValue("@driverID", driverID);
+            cmd.Parameters.AddWithValue("@CustName", custNamePOS);
+            cmd.Parameters.AddWithValue("@CustPhone", custPhonePOS);
 
             if (MainClass.con.State == ConnectionState.Closed)
             {
@@ -342,6 +395,218 @@ namespace SliceOfHeaven.Model
                 int localDetailID = reader.GetInt32(0);
                 int proID = reader.GetInt32(1);
                 existingDetails[proID] = localDetailID;
+                detailID = existingDetails[proID].ToString();
+            }
+
+            reader.Close();
+
+            if (MainClass.con.State == ConnectionState.Open)
+                MainClass.con.Close();
+
+            foreach (DataGridViewRow row in dgv_CategoryView.Rows)
+            {
+                int proID = Convert.ToInt32(row.Cells["dgvproID"].Value);
+                int localDetailID;
+
+                if (existingDetails.TryGetValue(proID, out localDetailID)) // If the product exists, update
+                {
+                    qry2 = @"UPDATE tableDetails SET qty = @qty, price = @price, amount = @amount 
+                WHERE DetailID = @ID";
+                }
+                else // If the product doesn't exist, insert
+                {
+                    qry2 = @"INSERT INTO tableDetails VALUES (@MainID, @proID, @qty, @price, @amount)";
+                    localDetailID = 0; // Set localDetailID to 0 for new rows
+                }
+                
+
+                SqlCommand cmd2 = new SqlCommand(qry2, MainClass.con);
+                cmd2.Parameters.AddWithValue("@ID", localDetailID);
+                cmd2.Parameters.AddWithValue("@MainID", MainID);
+                cmd2.Parameters.AddWithValue("@proID", proID);
+                cmd2.Parameters.AddWithValue("@qty", Convert.ToInt32(row.Cells["dgvQty"].Value));
+                cmd2.Parameters.AddWithValue("@price", Convert.ToDouble(row.Cells["dgvPrice"].Value));
+                cmd2.Parameters.AddWithValue("@amount", Convert.ToDouble(row.Cells["dgvAmount"].Value));
+
+                if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
+                cmd2.ExecuteNonQuery();
+
+                if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
+            }
+            MessageBox.Show("Successfully Saved");
+            MainID = 0;
+            DETAILID = 0;
+            dgv_CategoryView.Rows.Clear();
+            lbl_Table.Text = "";
+            lbl_Waiter.Text = "";
+            lbl_Table.Visible = false;
+            lbl_Waiter.Visible = false;
+            lbl_Total.Text = "00";
+            lbl_DriverName.Text = "";
+        }
+
+        private void lbl_Total_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_OrderType_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        public int id = 0;
+
+        private void btn_Bill_Click(object sender, EventArgs e)
+        {
+            form_BillList bill = new form_BillList();
+            MainClass.BlurBackgroundPOS(this, bill);
+
+            if (bill.DialogResult == DialogResult.OK && bill.MainID > 0)
+            {
+                id = bill.MainID;
+                LoadEntries();
+            }
+        }
+
+        private void LoadEntries()
+        {
+            string qry = @"SELECT * FROM tableMain m INNER JOIN tableDetails d ON m.MainID = d.MainID INNER JOIN products p ON p.pID = d.proID 
+                            WHERE m.MainID = "+ id +"";
+
+            SqlCommand cmd2 = new SqlCommand(qry, MainClass.con);
+            DataTable dt2 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+            da2.Fill(dt2);
+
+            /*if (dt2.Rows[0]["orderType"].ToString() == "Take Out")
+            {
+                lbl_Waiter.Visible = false;
+                lbl_Table.Visible = false;
+            }
+            else if (dt2.Rows[0]["orderType"].ToString() == "Delivery")
+            {
+                lbl_Waiter.Visible = false;
+                lbl_Table.Visible = false;
+            }
+            else
+            {
+                lbl_Waiter.Visible = true;
+                lbl_Table.Visible = true;
+            }*/
+
+            dgv_CategoryView.Rows.Clear();
+
+            foreach (DataRow item in dt2.Rows)
+            {
+                lbl_Table.Text = item["TableName"].ToString();
+                lbl_Waiter.Text = item["WaiterName"].ToString();
+
+                string detailid = item["DetailID"].ToString();
+                string proName = item["pName"].ToString();
+                string proid = item["proID"].ToString();
+                string qty = item["qty"].ToString();
+                string price = item["price"].ToString();
+                string amount = item["amount"].ToString();
+
+                object[] obj = { 0, detailid, proid,proName, qty, price, amount };
+                dgv_CategoryView.Rows.Add(obj);
+            }
+            GetTotal();
+        }
+
+        private void btn_Checkout_Click(object sender, EventArgs e)
+        {
+            form_Checkout checkout = new form_Checkout();
+            checkout.MainID = id;
+            checkout.amt = Convert.ToDouble(lbl_Total.Text);
+            MainClass.BlurBackgroundPOS(this, checkout);
+            dgv_CategoryView.Rows.Clear();
+            lbl_Table.Text = "";
+            lbl_Waiter.Text = "";
+            lbl_Table.Visible = false;
+            lbl_Waiter.Visible = false;
+            OrderType = "";
+            lbl_OrderType.Text = OrderType;
+        }
+
+        private void btn_Hold_Click(object sender, EventArgs e)
+        {
+            // Save the data in the database
+            // Create table
+            string qry1 = ""; // Main table
+            string qry2 = ""; // Detail table
+
+            detailID = "0";
+
+            if (MainID == 0) // Insert
+            {
+                qry1 = @"INSERT INTO tableMain VALUES 
+                        (@aDate, @aTime, @TableName, @WaiterName, @status, @orderType,
+	                    @total, @received, @change, @driverID, @CustName, @CustPhone);
+                        SELECT SCOPE_IDENTITY()";
+
+                // Get recent add ID value
+            }
+            else // Update
+            {
+                qry1 = @"UPDATE tableMain SET status = @status, total = @total, received = @received, change = @change  
+                        WHERE MainID = @ID";
+            }
+
+            SqlCommand cmd = new SqlCommand(qry1, MainClass.con);
+            cmd.Parameters.AddWithValue("@ID", MainID);
+            cmd.Parameters.AddWithValue("@aDate", Convert.ToDateTime(DateTime.Now.Date));
+            cmd.Parameters.AddWithValue("@aTime", DateTime.Now.ToShortTimeString());
+            cmd.Parameters.AddWithValue("@TableName", lbl_Table.Text);
+            cmd.Parameters.AddWithValue("@WaiterName", lbl_Waiter.Text);
+            cmd.Parameters.AddWithValue("@status", "Hold");
+            cmd.Parameters.AddWithValue("@orderType", OrderType);
+            cmd.Parameters.AddWithValue("@total", Convert.ToDouble(lbl_Total.Text)); // Saving data for kitchen value and will update when payment is received
+            cmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
+            cmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
+            cmd.Parameters.AddWithValue("@driverID", DriverPOS);
+            cmd.Parameters.AddWithValue("@CustName", custNamePOS);
+            cmd.Parameters.AddWithValue("@CustPhone", custPhonePOS);
+
+            if (MainClass.con.State == ConnectionState.Closed)
+            {
+                MainClass.con.Open();
+            }
+            if (MainID == 0)
+            {
+                MainID = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            else
+            {
+                cmd.ExecuteNonQuery();
+            }
+            if (MainClass.con.State == ConnectionState.Open)
+            {
+                MainClass.con.Close();
+            }
+
+            // Create a dictionary to store the existing DetailIDs for the current MainID
+            Dictionary<int, int> existingDetails = new Dictionary<int, int>();
+
+            // Check if there are any existing details for the current MainID
+            string checkQuery = "SELECT DetailID, proID FROM tableDetails WHERE MainID = @MainID";
+            SqlCommand checkCmd = new SqlCommand(checkQuery, MainClass.con);
+            checkCmd.Parameters.AddWithValue("@MainID", MainID);
+
+            if (MainClass.con.State == ConnectionState.Closed)
+                MainClass.con.Open();
+
+            SqlDataReader reader = checkCmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int localDetailID = reader.GetInt32(0);
+                int proID = reader.GetInt32(1);
+                existingDetails[proID] = localDetailID;
+                detailID = existingDetails[proID].ToString();
+                DETAILID = existingDetails[proID];
             }
 
             reader.Close();
@@ -365,6 +630,7 @@ namespace SliceOfHeaven.Model
                     localDetailID = 0; // Set localDetailID to 0 for new rows
                 }
 
+
                 SqlCommand cmd2 = new SqlCommand(qry2, MainClass.con);
                 cmd2.Parameters.AddWithValue("@ID", localDetailID);
                 cmd2.Parameters.AddWithValue("@MainID", MainID);
@@ -379,9 +645,24 @@ namespace SliceOfHeaven.Model
                 if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
             }
             MessageBox.Show("Successfully Saved");
+            MainID = 0;
+            DETAILID = 0;
+            dgv_CategoryView.Rows.Clear();
+            lbl_Table.Text = "";
+            lbl_Waiter.Text = "";
+            lbl_Table.Visible = false;
+            lbl_Waiter.Visible = false;
+            lbl_Total.Text = "00";
+            lbl_DriverName.Text = "";
+
         }
 
-        private void lbl_Total_Click(object sender, EventArgs e)
+        private void panel_Product_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_Category_Paint(object sender, PaintEventArgs e)
         {
 
         }

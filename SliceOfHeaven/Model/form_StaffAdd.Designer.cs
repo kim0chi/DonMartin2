@@ -73,6 +73,7 @@
             // 
             this.txtbox_name.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_name.Location = new System.Drawing.Point(44, 175);
+            this.txtbox_name.MaxLength = 25;
             this.txtbox_name.Multiline = true;
             this.txtbox_name.Name = "txtbox_name";
             this.txtbox_name.Size = new System.Drawing.Size(231, 32);
@@ -93,6 +94,7 @@
             // 
             this.txtbox_Phone.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Phone.Location = new System.Drawing.Point(331, 175);
+            this.txtbox_Phone.MaxLength = 11;
             this.txtbox_Phone.Multiline = true;
             this.txtbox_Phone.Name = "txtbox_Phone";
             this.txtbox_Phone.Size = new System.Drawing.Size(231, 32);
@@ -129,6 +131,7 @@
             "Waiter",
             "Cleaning",
             "Manager",
+            "Driver",
             "Other"});
             this.cbox_Role.Location = new System.Drawing.Point(44, 258);
             this.cbox_Role.Name = "cbox_Role";
@@ -140,7 +143,7 @@
             // 
             this.txtbox_Address.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Address.Location = new System.Drawing.Point(331, 258);
-            this.txtbox_Address.MaxLength = 11;
+            this.txtbox_Address.MaxLength = 30;
             this.txtbox_Address.Multiline = true;
             this.txtbox_Address.Name = "txtbox_Address";
             this.txtbox_Address.Size = new System.Drawing.Size(231, 32);

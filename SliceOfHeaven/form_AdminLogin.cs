@@ -7,19 +7,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SliceOfHeaven
 {
     public partial class form_AdminLogin : Form
     {
+        public string username = "";
+        public string password = "";
+        public string AdminName { get; set; }
+        public int AdminID { get; set; } 
+
         public form_AdminLogin()
         {
             InitializeComponent();
+            username = txtbox_Username.Text;
+            password = txtbox_Password.Text;
+        }
+        public bool Login(string username, string password)
+        {
+            username = txtbox_Username.Text;
+            password = txtbox_Password.Text;
+
+            DataRow adminRow;
+
+            if (MainClass.IsValidAdmin(username, password, out adminRow))
+            {
+                if (adminRow != null)
+                {
+                    this.AdminName = adminRow["aName"].ToString();
+                    this.AdminID = (int)adminRow["adminID"];
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private void cyberButton3_Click(object sender, EventArgs e)
         {
-            if (MainClass.IsValidAdmin(txtbox_Username.Text, txtbox_Password.Text) == false)
+
+            if (!Login(username, password))
             {
                 MessageBox.Show("Invalid Username or Password!");
                 return;
@@ -46,7 +74,6 @@ namespace SliceOfHeaven
 
         private void form_AdminLogin_Load(object sender, EventArgs e)
         {
-
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

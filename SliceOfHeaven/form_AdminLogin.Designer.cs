@@ -150,6 +150,7 @@
             // 
             this.txtbox_Password.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Password.Location = new System.Drawing.Point(136, 425);
+            this.txtbox_Password.MaxLength = 20;
             this.txtbox_Password.Multiline = true;
             this.txtbox_Password.Name = "txtbox_Password";
             this.txtbox_Password.PasswordChar = '*';
@@ -170,6 +171,7 @@
             // 
             this.txtbox_Username.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Username.Location = new System.Drawing.Point(136, 355);
+            this.txtbox_Username.MaxLength = 20;
             this.txtbox_Username.Multiline = true;
             this.txtbox_Username.Name = "txtbox_Username";
             this.txtbox_Username.Size = new System.Drawing.Size(339, 32);

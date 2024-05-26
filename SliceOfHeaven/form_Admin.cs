@@ -110,7 +110,7 @@ namespace SliceOfHeaven
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            AddControls(new form_AccAdmin());
         }
     }
 }

@@ -45,8 +45,6 @@
             this.txtbox_Email = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
-            this.txtbox_LastName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -159,10 +157,11 @@
             // txtbox_Username
             // 
             this.txtbox_Username.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbox_Username.Location = new System.Drawing.Point(313, 164);
+            this.txtbox_Username.Location = new System.Drawing.Point(310, 164);
+            this.txtbox_Username.MaxLength = 30;
             this.txtbox_Username.Multiline = true;
             this.txtbox_Username.Name = "txtbox_Username";
-            this.txtbox_Username.Size = new System.Drawing.Size(274, 32);
+            this.txtbox_Username.Size = new System.Drawing.Size(271, 32);
             this.txtbox_Username.TabIndex = 19;
             // 
             // label3
@@ -180,9 +179,10 @@
             // 
             this.txtbox_Name.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Name.Location = new System.Drawing.Point(310, 91);
+            this.txtbox_Name.MaxLength = 30;
             this.txtbox_Name.Multiline = true;
             this.txtbox_Name.Name = "txtbox_Name";
-            this.txtbox_Name.Size = new System.Drawing.Size(172, 32);
+            this.txtbox_Name.Size = new System.Drawing.Size(271, 32);
             this.txtbox_Name.TabIndex = 17;
             this.txtbox_Name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Name_KeyPress);
             // 
@@ -210,10 +210,11 @@
             // 
             this.txtbox_Password.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Password.Location = new System.Drawing.Point(310, 240);
+            this.txtbox_Password.MaxLength = 30;
             this.txtbox_Password.Multiline = true;
             this.txtbox_Password.Name = "txtbox_Password";
             this.txtbox_Password.PasswordChar = '*';
-            this.txtbox_Password.Size = new System.Drawing.Size(274, 32);
+            this.txtbox_Password.Size = new System.Drawing.Size(271, 32);
             this.txtbox_Password.TabIndex = 24;
             this.txtbox_Password.TextChanged += new System.EventHandler(this.txtbox_Password_TextChanged);
             // 
@@ -235,7 +236,7 @@
             this.txtbox_Phone.MaxLength = 11;
             this.txtbox_Phone.Multiline = true;
             this.txtbox_Phone.Name = "txtbox_Phone";
-            this.txtbox_Phone.Size = new System.Drawing.Size(274, 32);
+            this.txtbox_Phone.Size = new System.Drawing.Size(268, 32);
             this.txtbox_Phone.TabIndex = 26;
             this.txtbox_Phone.TextChanged += new System.EventHandler(this.txtbox_Phone_TextChanged);
             this.txtbox_Phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Phone_KeyPress);
@@ -254,10 +255,11 @@
             // txtbox_Email
             // 
             this.txtbox_Email.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbox_Email.Location = new System.Drawing.Point(310, 394);
+            this.txtbox_Email.Location = new System.Drawing.Point(313, 394);
+            this.txtbox_Email.MaxLength = 30;
             this.txtbox_Email.Multiline = true;
             this.txtbox_Email.Name = "txtbox_Email";
-            this.txtbox_Email.Size = new System.Drawing.Size(274, 32);
+            this.txtbox_Email.Size = new System.Drawing.Size(268, 32);
             this.txtbox_Email.TabIndex = 28;
             this.txtbox_Email.Validating += new System.ComponentModel.CancelEventHandler(this.txtbox_Email_Validating);
             // 
@@ -268,9 +270,9 @@
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label7.Location = new System.Drawing.Point(305, 366);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 25);
+            this.label7.Size = new System.Drawing.Size(84, 25);
             this.label7.TabIndex = 27;
-            this.label7.Text = "Email Address";
+            this.label7.Text = "Address";
             // 
             // nightControlBox1
             // 
@@ -296,26 +298,6 @@
             this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
             this.nightControlBox1.TabIndex = 29;
             // 
-            // txtbox_LastName
-            // 
-            this.txtbox_LastName.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbox_LastName.Location = new System.Drawing.Point(504, 91);
-            this.txtbox_LastName.Multiline = true;
-            this.txtbox_LastName.Name = "txtbox_LastName";
-            this.txtbox_LastName.Size = new System.Drawing.Size(187, 32);
-            this.txtbox_LastName.TabIndex = 30;
-            this.txtbox_LastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_LastName_KeyPress);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(506, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 25);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Last Name:";
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -333,8 +315,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 513);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtbox_LastName);
             this.Controls.Add(this.nightControlBox1);
             this.Controls.Add(this.btn_Signin);
             this.Controls.Add(this.txtbox_Email);
@@ -381,8 +361,6 @@
         private System.Windows.Forms.Label label7;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtbox_LastName;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox checkBox1;
     }
 }

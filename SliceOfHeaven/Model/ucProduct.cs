@@ -43,6 +43,14 @@ namespace SliceOfHeaven.Model
         private void pbox_ProductPic_Click(object sender, EventArgs e)
         {
             onSelect?.Invoke(this, e);
+
+            /*// Open the QuantityInputForm
+            QuantityInputForm quantityInputForm = new QuantityInputForm();
+            if (quantityInputForm.ShowDialog() == DialogResult.OK)
+            {
+                // Raise the QuantityChanged event with the new quantity
+                QuantityChanged?.Invoke(quantityInputForm.Quantity);
+            }*/
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

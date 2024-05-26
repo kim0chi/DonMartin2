@@ -72,11 +72,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Yu Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(365, 78);
+            this.label1.Location = new System.Drawing.Point(365, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 27);
+            this.label1.Size = new System.Drawing.Size(70, 27);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Sign In";
+            this.label1.Text = "Menu";
             // 
             // label2
             // 
@@ -87,25 +87,30 @@
             this.label2.Size = new System.Drawing.Size(111, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Username";
+            this.label2.Visible = false;
             // 
             // txtbox_Username
             // 
             this.txtbox_Username.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Username.Location = new System.Drawing.Point(370, 203);
+            this.txtbox_Username.MaxLength = 20;
             this.txtbox_Username.Multiline = true;
             this.txtbox_Username.Name = "txtbox_Username";
             this.txtbox_Username.Size = new System.Drawing.Size(339, 32);
             this.txtbox_Username.TabIndex = 3;
+            this.txtbox_Username.Visible = false;
             // 
             // txtbox_Password
             // 
             this.txtbox_Password.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Password.Location = new System.Drawing.Point(370, 300);
+            this.txtbox_Password.MaxLength = 20;
             this.txtbox_Password.Multiline = true;
             this.txtbox_Password.Name = "txtbox_Password";
             this.txtbox_Password.PasswordChar = '*';
             this.txtbox_Password.Size = new System.Drawing.Size(339, 32);
             this.txtbox_Password.TabIndex = 5;
+            this.txtbox_Password.Visible = false;
             // 
             // label3
             // 
@@ -116,6 +121,7 @@
             this.label3.Size = new System.Drawing.Size(108, 25);
             this.label3.TabIndex = 4;
             this.label3.Text = "Password";
+            this.label3.Visible = false;
             // 
             // checkBox1
             // 
@@ -126,6 +132,7 @@
             this.checkBox1.TabIndex = 6;
             this.checkBox1.Text = "Show Password";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Visible = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // cyberButton3
@@ -154,16 +161,16 @@
             this.cyberButton3.Lighting = false;
             this.cyberButton3.LinearGradient_Background = false;
             this.cyberButton3.LinearGradientPen = false;
-            this.cyberButton3.Location = new System.Drawing.Point(370, 347);
+            this.cyberButton3.Location = new System.Drawing.Point(370, 389);
             this.cyberButton3.Name = "cyberButton3";
             this.cyberButton3.PenWidth = 15;
             this.cyberButton3.Rounding = true;
             this.cyberButton3.RoundingInt = 70;
-            this.cyberButton3.Size = new System.Drawing.Size(108, 37);
+            this.cyberButton3.Size = new System.Drawing.Size(143, 47);
             this.cyberButton3.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.cyberButton3.TabIndex = 11;
             this.cyberButton3.Tag = "Cyber";
-            this.cyberButton3.TextButton = "Sign In";
+            this.cyberButton3.TextButton = "Back To User";
             this.cyberButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberButton3.Timer_Effect_1 = 5;
             this.cyberButton3.Timer_RGB = 300;
@@ -208,6 +215,7 @@
             this.cyberButton4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberButton4.Timer_Effect_1 = 5;
             this.cyberButton4.Timer_RGB = 300;
+            this.cyberButton4.Visible = false;
             this.cyberButton4.Click += new System.EventHandler(this.cyberButton4_Click);
             // 
             // label4
@@ -219,6 +227,7 @@
             this.label4.Size = new System.Drawing.Size(112, 19);
             this.label4.TabIndex = 13;
             this.label4.Text = "No account yet?";
+            this.label4.Visible = false;
             // 
             // nightControlBox1
             // 
@@ -248,7 +257,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Yu Gothic Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(366, 434);
+            this.label5.Location = new System.Drawing.Point(366, 463);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 19);
             this.label5.TabIndex = 15;

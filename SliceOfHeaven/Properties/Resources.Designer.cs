@@ -63,6 +63,26 @@ namespace SliceOfHeaven.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _Logo_Pizzaria_Dom_António_Italian_Food {
+            get {
+                object obj = ResourceManager.GetObject("_Logo Pizzaria Dom António Italian Food", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _Logo_Pizzaria_Dom_António_Italian_Food1 {
+            get {
+                object obj = ResourceManager.GetObject("_Logo Pizzaria Dom António Italian Food1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap download {
             get {
                 object obj = ResourceManager.GetObject("download", resourceCulture);
@@ -76,6 +96,16 @@ namespace SliceOfHeaven.Properties {
         internal static System.Drawing.Bitmap icons8_bag_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-bag-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_bill_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-bill-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +143,29 @@ namespace SliceOfHeaven.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_minus_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-minus-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_pizza_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-pizza-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_plus_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-plus-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +186,16 @@ namespace SliceOfHeaven.Properties {
         internal static System.Drawing.Bitmap icons8_product_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-product-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_quantity_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-quantity-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

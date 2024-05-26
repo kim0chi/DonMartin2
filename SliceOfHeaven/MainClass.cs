@@ -11,6 +11,9 @@ using System.Dynamic;
 using System.Windows.Forms;
 using ReaLTaiizor.Enum.Poison;
 using System.Drawing;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Runtime.Remoting.Messaging;
+using System.Net;
 
 namespace SliceOfHeaven
 {
@@ -67,13 +70,120 @@ namespace SliceOfHeaven
         }
 
         // To Register New Users
-        public static void Register(string username, string name, string lastname, string password, string phone, string email)
+        public static void Register(string username, string name, string password, string phone, string email)
         {
-            string qry = @"INSERT INTO [dbo].[userz] ([First_Name],[Last_Name],[username],[uPass],[uPhone],[uEmail])VALUES('" + name + "','" + lastname + "','" + username + "','"+ password+"','" + phone + "','" + email + "')";
+            string qry = @"INSERT INTO [dbo].[users] (username,upass,uName,uPhone,uEmail)VALUES('" + name + "','" + username + "','"+ password+"','" + phone + "','" + email + "')";
             con.Open();
             SqlCommand cmd = new SqlCommand(qry, con);
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+        public static void RegisterNewStaff(string name, string phone, string address, string username, string password)
+        {
+            // Open the connection before calling the methods
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                    RegisterStaff(name, phone, address);
+                    MessageBox.Show("Done Staff");
+                    RegisterEmp(username, password, name);
+                    MessageBox.Show("Done Employee");
+                }
+                if (con.State == ConnectionState.Open)
+                {
+                    RegisterStaff(name, phone, address);
+                    MessageBox.Show("Done Staff");
+                    RegisterEmp(username, password, name);
+                    MessageBox.Show("Done Employee");
+                    con.Close();
+                }
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+        }
+        public static int GetStaffID(string staffName)
+        {
+            string query = "SELECT staffID FROM staff WHERE sName = @sName";
+            SqlCommand command = new SqlCommand(query, con);
+            command.Parameters.AddWithValue("@sName", staffName);
+
+            con.Open();
+            int staffID = Convert.ToInt32(command.ExecuteScalar());
+            con.Close();
+
+            return staffID;
+        }
+        public static void RegisterStaff(string name, string phone, string address)
+        {
+            try
+            {
+                string staffQuery = "UPDATE staff SET sName = @sName, sPhone = @sPhone, sAddress = @sAddress WHERE sName = @sName";
+                SqlCommand staffCommand = new SqlCommand(staffQuery, con);
+                staffCommand.Parameters.AddWithValue("@sName", name);
+                staffCommand.Parameters.AddWithValue("@sPhone", phone);
+                staffCommand.Parameters.AddWithValue("@sAddress", address);
+
+                if (con.State == ConnectionState.Open)
+                {
+                    staffCommand.ExecuteNonQuery();
+                    MessageBox.Show("Updated Staff");
+                }
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error Occurred");
+            }
+        }
+
+        public static void RegisterEmp(string username, string password, string staffName)
+        {
+            try
+            {
+                int staffID = GetStaffID(staffName);
+
+                string employeeQuery = "INSERT INTO employee (empID, username, pass, sName) VALUES (@empID, @username, @pass, @sName)";
+                SqlCommand employeeCommand = new SqlCommand(employeeQuery, con);
+                employeeCommand.Parameters.AddWithValue("@empID", staffID);
+                employeeCommand.Parameters.AddWithValue("@username", username);
+                employeeCommand.Parameters.AddWithValue("@pass", password);
+                employeeCommand.Parameters.AddWithValue("@sName", staffName);
+
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                    employeeCommand.ExecuteNonQuery();
+                    MessageBox.Show("Executed Query for employee");
+                }
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error Occurred");
+            }
+        }
+
+        public static bool IsStaffNameExist(string staffName)
+        {
+            string query = "SELECT COUNT(*) FROM staff WHERE sName = @sName";
+                SqlCommand command = new SqlCommand(query, con);
+                command.Parameters.AddWithValue("@sName", staffName);
+                con.Open();
+                int count = (int)command.ExecuteScalar();
+                return count > 0;
         }
 
         // To Check for Duplicate Users
@@ -112,7 +222,7 @@ namespace SliceOfHeaven
         }
 
         // To Check for Duplicate Names
-        public static bool IsDuplicateName(string name, string lastname)
+        public static bool IsDuplicateName(string name)
         {
             string qry = @"SELECT COUNT(1) FROM userz WHERE First_Name = @First_Name AND Last_Name = @Last_Name";
 
@@ -126,7 +236,6 @@ namespace SliceOfHeaven
                 using (SqlCommand cmd = new SqlCommand(qry, con))
                 {
                     cmd.Parameters.AddWithValue("@First_Name", name);
-                    cmd.Parameters.AddWithValue("@Last_Name", lastname);
                     int count = (int)cmd.ExecuteScalar();
                     return count > 0;
                 }
@@ -146,31 +255,59 @@ namespace SliceOfHeaven
         }
 
         // For Admin for Valid Credentials with Database
-        public static bool IsValidAdmin(string user, string pass)
+        public static bool IsValidAdmin(string username, string password, out DataRow admin)
         {
-            bool isValid = false;
+            admin = null;
 
-            string qry = @"SELECT * from admin where username = '" + user + "' and apass = '" + pass + "' ";
+            string qry = @"SELECT adminID, aName FROM admin WHERE username = @username AND apass = @password";
+
             SqlCommand cmd = new SqlCommand(qry, con);
-            DataTable dt = new DataTable();
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
             da.Fill(dt);
 
             if (dt.Rows.Count > 0)
             {
-                isValid = true;
-                ADMIN = dt.Rows[0]["aName"].ToString();
+                admin = dt.Rows[0];
+                return true;
             }
-
-            return isValid;
+            else
+            {
+                return false;
+            }
         }
 
         // For Staff checking valid credentials with database
-        public static bool IsValidStaff(string user, string pass)
+        public bool IsValidStaff(string user, string pass, out DataRow userDetails)
         {
-            bool isValid = false;
+            userDetails = null;
+            string qry = @"
+        SELECT 
+            e.username, 
+            e.pass, 
+            s.staffID, 
+            s.sName, 
+            s.sPhone, 
+            s.sAddress, 
+            s.sRole
+        FROM 
+            employee e
+        INNER JOIN 
+            staff s ON e.sName = s.sName
+        WHERE 
+            e.username = @username 
+            AND e.pass = @pass;";
 
             SqlCommand cmd = new SqlCommand(qry, con);
+                
+            cmd.Parameters.AddWithValue("@username", user);
+            cmd.Parameters.AddWithValue("@pass", pass);
+
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
 
@@ -179,7 +316,46 @@ namespace SliceOfHeaven
                 userDetails = dt.Rows[0];
                 return true;
             }
+            else
+            {
+                return false;
+            }    
         }
+
+
+        public static DataRow GetStaffDetailsByUsername(string username)
+        {
+            string qry = @"
+        SELECT 
+            s.staffID, 
+            s.sName, 
+            s.sPhone, 
+            s.sAddress, 
+            s.sRole
+        FROM 
+            staff s
+        INNER JOIN 
+            employee e ON s.sName = e.sName
+        WHERE 
+            e.username = @username;";
+
+            SqlCommand cmd = new SqlCommand(qry, con);
+            cmd.Parameters.AddWithValue("@username", username);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
+
 
 
         // Method for CURD Operation
@@ -364,6 +540,30 @@ namespace SliceOfHeaven
                 Background.Dispose();
             }
         }
+
+        public static void BlurBackgroundPOS(Form owner, Form model)
+        {
+            Form background = new Form();
+            try
+            {
+                background.StartPosition = FormStartPosition.CenterScreen;
+                background.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                background.Opacity = 0.5d;
+                background.BackColor = Color.Black;
+                background.Size = owner.Size;
+                background.Location = owner.Location;
+                background.ShowInTaskbar = false;
+                background.Show();
+
+                model.Owner = background;
+                model.ShowDialog(background);
+            }
+            finally
+            {
+                background.Dispose();
+            }
+        }
+
 
         // For CB Fill
 

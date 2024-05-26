@@ -127,15 +127,6 @@
         jSnWCPaGtSmFZgSzNvwj2AHWhhR7tMXm3BcNG5sejr4gsgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btn_share.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAL9JREFUSEvdlEsKwkAQRGepe/EyXsDPmTyQXkHcxAvkDNGF4NK9WgVpCE7T000c
-        QR88kEl1hSSN6a9ZwzN8FmRmBcN4ysUOhtGKLMNoJZZhtBLLMFqJZZjqH5mrx0GtcCgzSziaPZTSHQ8+
-        zQxe4Q3OeVCDRe9oNvACS38D3lzGcIOsDfHmMqrfgI/L4dIKenPfYwq3sIX3Xv7m2QQK3lzGEco7ffcA
-        BW8u4wG1IcprgjeXcYLaEG2g4M39PCm9AGSQsQf0n0qjAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="btn_customize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -145,18 +136,6 @@
         37GNtYh43DvMcYxxzQPOYiUezyZqqFprwDk0Ex/8DlaSe3t+Q82jwTPOYyllb0+wippHOnj/TnTyLB7P
         ijYyXGMUisHrPn2MsX+JWerE43m/oE56Y3vyDLOk8WyjMt0drL6a6vheLNTJdd0iZh8uF88Tav2GaqqT
         DVXU8Xj0B6YmF997Ixd1dFM0GOtJy9DkGy/q9FCRNFr0r1MUnwESlPO3p9QvAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btn_products.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAU1JREFUSEvtlj1Ow0AUhF0g0fPXABUSPS0CQcn/BagQR0DcLOIScArgGEgwAzvW
-        09uJ7VgBUfiTPsX75m0cZbPONhMTf8ElfIefPb7BcyjGzmth4CY4X6EYO68lN83gfvGp1KIi1/usiOEz
-        XIGC1y8w9ohYG2JFDC9YSFzB2CNibYgVMVxnIbEBY4/Q+PB75DmCeV6LArrGQqLvxnzzeRzDPK9FAX1g
-        IfEIY4+ItSFWxPAD3kFxD1mLPSLWhljhmvgj4wPCZUJjt8ZxbWVFbqC3RZcJjd0ax7WVFbmBXsObVJPC
-        ZV1WuKYTeJpqUrisywrXdFB0mdB4KftY7hVdJjReyj6Wm3Ar1aRwWZcVrmm16DLhsi4rXBO/PrclqHBZ
-        lxWL/KFT4bJ52oMAjyWL3Fy4zMmbnsHR7ECeSARPKts/l7/Pbnkl/CAT/5Wm+QLUMINFGQ4wwgAAAABJ
-        RU5ErkJggg==
 </value>
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

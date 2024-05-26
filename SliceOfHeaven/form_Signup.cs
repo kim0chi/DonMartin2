@@ -19,7 +19,6 @@ namespace SliceOfHeaven
         {
             InitializeComponent();
             txtbox_Name.KeyPress += new KeyPressEventHandler(txtbox_Name_KeyPress);
-            txtbox_LastName.KeyPress += new KeyPressEventHandler(txtbox_LastName_KeyPress);
             txtbox_Phone.KeyPress += new KeyPressEventHandler(txtbox_Phone_KeyPress);
             txtbox_Password.KeyPress += new KeyPressEventHandler(txtbox_Password_KeyPress);
             txtbox_Email.Validating += new System.ComponentModel.CancelEventHandler(txtbox_Email_Validating);
@@ -39,7 +38,7 @@ namespace SliceOfHeaven
                 MessageBox.Show("Please enter an email address from Gmail, Yahoo, Outlook, or Hotmail.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }*/
-            if (MainClass.IsDuplicateName(txtbox_Name.Text, txtbox_LastName.Text))
+            if (MainClass.IsDuplicateName(txtbox_Name.Text))
             {
                 MessageBox.Show("User already exists!");
                 return;
@@ -61,7 +60,7 @@ namespace SliceOfHeaven
             }
 
 
-            MainClass.Register(txtbox_Username.Text , txtbox_Name.Text, txtbox_LastName.Text, txtbox_Password.Text, txtbox_Phone.Text, txtbox_Email.Text);
+            MainClass.Register(txtbox_Username.Text , txtbox_Name.Text, txtbox_Password.Text, txtbox_Phone.Text, txtbox_Email.Text);
             MessageBox.Show("Registered Successfully!");
             this.Hide();
             Form1 login = new Form1();

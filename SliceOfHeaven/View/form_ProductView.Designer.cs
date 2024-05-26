@@ -45,6 +45,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CategoryView)).BeginInit();
             this.SuspendLayout();
             // 
+            // txtbox_Search
+            // 
+            this.txtbox_Search.Font = new System.Drawing.Font("Yu Gothic UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // label2
             // 
             this.label2.Size = new System.Drawing.Size(131, 27);

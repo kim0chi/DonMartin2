@@ -62,6 +62,30 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_AccAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_AccAdmin.Designer.cs">
+      <DependentUpon>form_AccAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_AccCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_AccCustomer.Designer.cs">
+      <DependentUpon>form_AccCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_AccEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_AccEmployee.Designer.cs">
+      <DependentUpon>form_AccEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_AccUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_AccUser.Designer.cs">
+      <DependentUpon>form_AccUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +103,24 @@
     </Compile>
     <Compile Include="form_chooseLogin.Designer.cs">
       <DependentUpon>form_chooseLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_CustomerAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_CustomerAccount.Designer.cs">
+      <DependentUpon>form_CustomerAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_CustomerDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_CustomerDelivery.Designer.cs">
+      <DependentUpon>form_CustomerDelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_CustomerTakeOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_CustomerTakeOut.Designer.cs">
+      <DependentUpon>form_CustomerTakeOut.cs</DependentUpon>
     </Compile>
     <Compile Include="form_Employee.cs">
       <SubType>Form</SubType>
@@ -104,6 +146,18 @@
     <Compile Include="form_Main.Designer.cs">
       <DependentUpon>form_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_OrderStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_OrderStatus.Designer.cs">
+      <DependentUpon>form_OrderStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_Payment.Designer.cs">
+      <DependentUpon>form_Payment.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_SampleAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,12 +176,42 @@
     <Compile Include="form_Signup.Designer.cs">
       <DependentUpon>form_Signup.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_SignUpEmployeecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_SignUpEmployeecs.Designer.cs">
+      <DependentUpon>form_SignUpEmployeecs.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainClass.cs" />
+    <Compile Include="Model\form_AddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\form_AddCustomer.Designer.cs">
+      <DependentUpon>form_AddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\form_BillList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\form_BillList.Designer.cs">
+      <DependentUpon>form_BillList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\form_CategoryAdd.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Model\form_CategoryAdd.Designer.cs">
       <DependentUpon>form_CategoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\form_Checkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\form_Checkout.Designer.cs">
+      <DependentUpon>form_Checkout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\form_CustomerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\form_CustomerAdd.Designer.cs">
+      <DependentUpon>form_CustomerAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\form_POS.cs">
       <SubType>Form</SubType>
@@ -164,6 +248,12 @@
     </Compile>
     <Compile Include="Model\form_WaiterSelect.Designer.cs">
       <DependentUpon>form_WaiterSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QuantityInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\QuantityInputForm.Designer.cs">
+      <DependentUpon>QuantityInputForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\ucProduct.cs">
       <SubType>UserControl</SubType>
@@ -206,6 +296,18 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form_AccAdmin.resx">
+      <DependentUpon>form_AccAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_AccCustomer.resx">
+      <DependentUpon>form_AccCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_AccEmployee.resx">
+      <DependentUpon>form_AccEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_AccUser.resx">
+      <DependentUpon>form_AccUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form_Admin.resx">
       <DependentUpon>form_Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,6 +316,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_chooseLogin.resx">
       <DependentUpon>form_chooseLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_CustomerAccount.resx">
+      <DependentUpon>form_CustomerAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_CustomerDelivery.resx">
+      <DependentUpon>form_CustomerDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_CustomerTakeOut.resx">
+      <DependentUpon>form_CustomerTakeOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_Employee.resx">
       <DependentUpon>form_Employee.cs</DependentUpon>
@@ -227,6 +338,12 @@
     <EmbeddedResource Include="form_Main.resx">
       <DependentUpon>form_Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form_OrderStatus.resx">
+      <DependentUpon>form_OrderStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_Payment.resx">
+      <DependentUpon>form_Payment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form_SampleAdd.resx">
       <DependentUpon>form_SampleAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,8 +353,23 @@
     <EmbeddedResource Include="form_Signup.resx">
       <DependentUpon>form_Signup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form_SignUpEmployeecs.resx">
+      <DependentUpon>form_SignUpEmployeecs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\form_AddCustomer.resx">
+      <DependentUpon>form_AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\form_BillList.resx">
+      <DependentUpon>form_BillList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model\form_CategoryAdd.resx">
       <DependentUpon>form_CategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\form_Checkout.resx">
+      <DependentUpon>form_Checkout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\form_CustomerAdd.resx">
+      <DependentUpon>form_CustomerAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\form_POS.resx">
       <DependentUpon>form_POS.cs</DependentUpon>
@@ -256,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Model\form_WaiterSelect.resx">
       <DependentUpon>form_WaiterSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\QuantityInputForm.resx">
+      <DependentUpon>QuantityInputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\ucProduct.resx">
       <DependentUpon>ucProduct.cs</DependentUpon>
@@ -349,6 +484,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-kitchen-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-quantity-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-minus-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bill-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_Logo Pizzaria Dom António Italian Food.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_Logo Pizzaria Dom António Italian Food1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -19,7 +19,7 @@ namespace SliceOfHeaven
 
         private void cyberButton3_Click(object sender, EventArgs e)
         {
-            if (MainClass.IsValidUser(txtbox_Username.Text, txtbox_Password.Text) == false)
+            /*if (MainClass.IsValidUser(txtbox_Username.Text, txtbox_Password.Text) == false)
             {
                 MessageBox.Show("Invalid Username or Password!","Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -32,15 +32,16 @@ namespace SliceOfHeaven
             else
             {
                 MessageBox.Show("Sign In successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Hide();
-                form_Main main = new form_Main();
-                main.Show();
-            }
+                
+            }*/
+            this.Hide();
+            form_Main main = new form_Main();
+            main.Show();
         }
 
         private void cyberButton2_Click(object sender, EventArgs e)
         {
-            if (MainClass.IsValidAdmin(txtbox_Username.Text, txtbox_Password.Text) == false)
+            if (true)
             {
                 MessageBox.Show("Invalid Username or Password!");
                 return;
@@ -60,16 +61,23 @@ namespace SliceOfHeaven
 
         private void btn_Staff_Click(object sender, EventArgs e)
         {
-            if (MainClass.IsValidStaff(txtbox_Username.Text, txtbox_Password.Text) == false)
+            string user = txtbox_Username.Text;
+            string pass = txtbox_Password.Text;
+            MainClass main = new MainClass();
+
+            if (main.IsValidStaff(user, pass, out DataRow userDetails))
             {
-                MessageBox.Show("Invalid Username or Password!");
-                return;
-            }
-            else
-            {
+                MessageBox.Show("Login successful!");
+
+                string staffID = userDetails["staffID"].ToString();
+                string staffName = userDetails["staffName"].ToString();
                 this.Hide();
                 form_Employee staff = new form_Employee();
                 staff.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password.");
             }
         }
 

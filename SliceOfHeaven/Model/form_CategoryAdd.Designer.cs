@@ -78,6 +78,7 @@
             // 
             this.txtbox_name.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_name.Location = new System.Drawing.Point(52, 166);
+            this.txtbox_name.MaxLength = 20;
             this.txtbox_name.Multiline = true;
             this.txtbox_name.Name = "txtbox_name";
             this.txtbox_name.Size = new System.Drawing.Size(231, 32);

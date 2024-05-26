@@ -20,6 +20,7 @@ namespace SliceOfHeaven
             InitializeComponent();
         }
 
+        public bool logout;
         private void form_Employee_Load(object sender, EventArgs e)
         {
             lbl_User.Text = MainClass.STAFF;
@@ -46,9 +47,7 @@ namespace SliceOfHeaven
 
         private void btn_Logout_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 form = new Form1();
-            form.Show();
+            
         }
 
         private void btn_home_Click_1(object sender, EventArgs e)
@@ -62,6 +61,28 @@ namespace SliceOfHeaven
             form_POS pos = new form_POS();
             pos.Show();
             this.Hide();
+        }
+        form_KitchenView kitchen = new form_KitchenView();
+        private void btn_Kitchen_Click(object sender, EventArgs e)
+        {
+            AddControls(kitchen);
+        }
+
+        private void btn_account_Click(object sender, EventArgs e)
+        {
+            AddControls(new form_AccEmployee());
+        }
+
+        private void btn_Logout_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            Form1 form = new Form1();
+            form.Show();
+        }
+
+        private void btn_account_Click_1(object sender, EventArgs e)
+        {
+            AddControls(new form_AccEmployee());
         }
     }
 }

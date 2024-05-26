@@ -94,6 +94,7 @@
             // 
             this.txtbox_Price.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Price.Location = new System.Drawing.Point(323, 180);
+            this.txtbox_Price.MaxLength = 5;
             this.txtbox_Price.Multiline = true;
             this.txtbox_Price.Name = "txtbox_Price";
             this.txtbox_Price.Size = new System.Drawing.Size(116, 32);
@@ -114,6 +115,7 @@
             // 
             this.txtbox_name.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_name.Location = new System.Drawing.Point(62, 180);
+            this.txtbox_name.MaxLength = 20;
             this.txtbox_name.Multiline = true;
             this.txtbox_name.Name = "txtbox_name";
             this.txtbox_name.Size = new System.Drawing.Size(231, 32);
