@@ -170,19 +170,15 @@ namespace SliceOfHeaven
         {
             bool isValid = false;
 
-            string qry = @"SELECT * from employee where username = '" + user + "' and spass = '" + pass + "' ";
             SqlCommand cmd = new SqlCommand(qry, con);
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
 
             if (dt.Rows.Count > 0)
             {
-                isValid = true;
-                STAFF = dt.Rows[0]["sName"].ToString();
+                userDetails = dt.Rows[0];
+                return true;
             }
-
-            return isValid;
         }
 
 
