@@ -26,15 +26,16 @@ namespace SliceOfHeaven.Model
         public int MainID = 0;
         public string OrderType = "";
 
-        private void form_POS_FormClosing(object sender, FormClosingEventArgs e) // Useless
+        private void form_POS_FormClosing(object sender, FormClosingEventArgs e)
         {
-           
+            // Perform any cleanup if necessary
         }
 
-        private void dgv_CategoryView_CellContentClick(object sender, DataGridViewCellEventArgs e) // Useless
+        private void dgv_CategoryView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            // Handle cell content clicks if needed
         }
+
         public static Form PreviousForm { get; set; }
         public string PName { get; private set; }
         public string PPrice { get; private set; }
@@ -76,19 +77,20 @@ namespace SliceOfHeaven.Model
 
             panel_Category.Controls.Clear();
 
-
             if (dt.Rows.Count > 0)
             {
                 foreach (DataRow row in dt.Rows)
                 {
-                    Button b = new Button();
-                    b.BackColor = Color.FromArgb(50, 55, 89);
-                    b.Size = new Size(134, 45);
-                    b.FlatStyle = FlatStyle.Flat;
-                    b.ForeColor = Color.White;
-                    b.Text = row["catName"].ToString();
+                    Button b = new Button
+                    {
+                        BackColor = Color.FromArgb(50, 55, 89),
+                        Size = new Size(134, 45),
+                        FlatStyle = FlatStyle.Flat,
+                        ForeColor = Color.White,
+                        Text = row["catName"].ToString()
+                    };
 
-                    // Event For Click
+                    // Event for Click
                     b.Click += new EventHandler(_Click);
 
                     panel_Category.Controls.Add(b);
@@ -114,10 +116,15 @@ namespace SliceOfHeaven.Model
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Handle button click if needed
+        }
+
         private void AddItems(string id, string proID, string name, string cat, string price, Image pImage)
         {
             var w = new ucProduct
-            { 
+            {
                 PName = name,
                 PPrice = price,
                 PCategory = cat,
@@ -133,7 +140,7 @@ namespace SliceOfHeaven.Model
 
                 foreach (DataGridViewRow item in dgv_CategoryView.Rows)
                 {
-                    // This will check if the Product already has quantity and update price
+                    // This will check if the product already has quantity and update price
                     if (Convert.ToInt32(item.Cells["dgvproID"].Value) == wdg.id)
                     {
                         // Update the quantity and amount
@@ -148,12 +155,13 @@ namespace SliceOfHeaven.Model
                     }
                 }
 
-                // This Line Adds New Product First for Serial Number and from ID
+                // This line adds new product first for serial number and from ID
                 dgv_CategoryView.Rows.Add(new object[] { 0, 0, wdg.id, wdg.PName, 1, wdg.PPrice, wdg.PPrice });
                 GetTotal();
             };
         }
 
+        // Getting product from database
         private void LoadProducts()
         {
             string qry = "SELECT * FROM products INNER JOIN category ON catID = CategoryID";
@@ -164,10 +172,8 @@ namespace SliceOfHeaven.Model
 
             foreach (DataRow item in dt.Rows)
             {
-                Byte[] imagearray = (byte[])item["pImage"];
-                byte[] imagebytearray = imagearray;
-
-                AddItems("0",item["pID"].ToString(), item["pName"].ToString(), item["catName"].ToString(), item["pPrice"].ToString(), Image.FromStream(new MemoryStream(imagearray)));
+                byte[] imageArray = (byte[])item["pImage"];
+                AddItems("0", item["pID"].ToString(), item["pName"].ToString(), item["catName"].ToString(), item["pPrice"].ToString(), Image.FromStream(new MemoryStream(imageArray)));
             }
         }
 
@@ -182,7 +188,8 @@ namespace SliceOfHeaven.Model
 
         private void dgv_CategoryView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            // For Serial Number
+            // For serial number
+
             int count = 0;
 
             foreach (DataGridViewRow row in dgv_CategoryView.Rows)
@@ -239,7 +246,7 @@ namespace SliceOfHeaven.Model
 
         private void btn_DineIn_Click(object sender, EventArgs e)
         {
-            //Create Form For Table Selection and Waiter Selection
+            // Create form for table selection and waiter selection
             OrderType = "Dine In";
             form_TableSelect table = new form_TableSelect();
             MainClass.BlurBackground(table);
@@ -267,20 +274,20 @@ namespace SliceOfHeaven.Model
 
         private void btn_Kitchen_Click(object sender, EventArgs e)
         {
-            // Save the Data in Database
-            // Create Table
-            string qry1 = ""; // Main Table
-            string qry2 = ""; // Detail Table
+            // Save the data in the database
+            // Create table
+            string qry1 = ""; // Main table
+            string qry2 = ""; // Detail table
 
             int detailID = 0;
-            
+
             if (MainID == 0) // Insert
             {
                 qry1 = @"INSERT INTO tableMain VALUES 
                         (@aDate, @aTime, @TableName, @WaiterName, @status, @orderType,
 	                    @total, @received, @change);
                         SELECT SCOPE_IDENTITY()";
-                // Get Recent Add ID Value
+                // Get recent add ID value
             }
             else // Update
             {
@@ -296,7 +303,7 @@ namespace SliceOfHeaven.Model
             cmd.Parameters.AddWithValue("@WaiterName", lbl_Waiter.Text);
             cmd.Parameters.AddWithValue("@status", "Pending");
             cmd.Parameters.AddWithValue("@orderType", OrderType);
-            cmd.Parameters.AddWithValue("@total", Convert.ToDouble(lbl_Total.Text)); // Saving Data For Kitchen Value and will Update When Payment is Received
+            cmd.Parameters.AddWithValue("@total", Convert.ToDouble(lbl_Total.Text)); // Saving data for kitchen value and will update when payment is received
             cmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
             cmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
 
@@ -312,7 +319,7 @@ namespace SliceOfHeaven.Model
             {
                 cmd.ExecuteNonQuery();
             }
-            if (MainClass.con.State == ConnectionState.Open) 
+            if (MainClass.con.State == ConnectionState.Open)
             {
                 MainClass.con.Close();
             }
@@ -357,7 +364,7 @@ namespace SliceOfHeaven.Model
                     qry2 = @"INSERT INTO tableDetails VALUES (@MainID, @proID, @qty, @price, @amount)";
                     localDetailID = 0; // Set localDetailID to 0 for new rows
                 }
-                
+
                 SqlCommand cmd2 = new SqlCommand(qry2, MainClass.con);
                 cmd2.Parameters.AddWithValue("@ID", localDetailID);
                 cmd2.Parameters.AddWithValue("@MainID", MainID);
@@ -368,7 +375,7 @@ namespace SliceOfHeaven.Model
 
                 if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
                 cmd2.ExecuteNonQuery();
-                
+
                 if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
             }
             MessageBox.Show("Successfully Saved");

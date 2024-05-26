@@ -102,5 +102,15 @@ namespace SliceOfHeaven
             pos.Show();
             this.Hide();
         }
+        form_KitchenView kitchen = new form_KitchenView();
+        private void btn_account_Click(object sender, EventArgs e)
+        {
+            AddControls(kitchen);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
