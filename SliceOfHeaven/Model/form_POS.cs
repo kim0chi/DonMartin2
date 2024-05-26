@@ -211,7 +211,6 @@ namespace SliceOfHeaven.Model
                     tot += double.Parse(item.Cells["dgvAmount"].Value.ToString());
                 }
             }
-
             lbl_Total.Text = tot.ToString("N2");
         }
 
